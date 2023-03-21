@@ -153,3 +153,36 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 Parabéns! :+1:
 
 Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Adicionou o plugin do Tomcat Embed e o Plugin de Build do Maven e com isso já possível subir o servidor e renderizar a nossa primeira pagina web (Hello, world!).
+
+---
+
+## Tarefa 3: Criando sua primeira Servlet e fazendo uma requisição
+
+Agora que você já tem sua aplicação devidamente criada, e já conseguiu subir seu servidor web, cjegou a hora de criar sua primeira Servlet e fazer sua primeira requisição **http**
+
+1) Abra novamente o arquivo arquivo *pom.xml*
+
+2) Localize o bloco *</dependencies>* e adicione a dependência da API de Servlet no **pom.xml** da sua aplicação, conforme o código a seguir:
+
+```xml
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>provided</scope>
+</dependency>
+
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+```
+
+3) Salve as alterações e clique e clique no botão *Load Maven Changes* para que o IntelliJ possa fazer o download das novas *dependências* de forma automática para você. Aguarde o carregamento finalizar.
+
+4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carsoft*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
+
+5) Após o diretório Java ter sido criado, vamos criar o *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft*. Esse será o pacote padrão da nossa aplicação.
+
+6) Agora vamos criar nossa primeira Classe Java, clicando com o botão direto em cima do package padrão que acabamos de criar, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: CreateCarServlet
