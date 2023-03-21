@@ -14,6 +14,8 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 1) Garanta que você possui o IntelliJ Instalado na sua maquina. Caso não tenha faça a instalação conforme demonstrado nesse vídeo: [Instalando o IntelliJ no Windows](https://youtu.be/RBxAySum8UU).
 
+![vídeo demonstrando como installar o intellij no windows](/gifs/01-instalando-intellij.gif)
+
 2) Abra o IntelliJ
 
 OBS: Caso seja a primeira vez que esteja abrindo o IntelliJ na sua maquina, você precisa clicar no *checkbox* para confirmar que leu os termos de uso da ferramenta e clicar em *continue*.
@@ -40,6 +42,8 @@ Caso contrário, você pode desconsiderar esse trecho.
 
 
 5) Clique no botão *Create*
+
+![víde demonstrando como criar um novo projeto usando o archetype web](/gifs/02-criando-o-projeto.gif)
 
 Depois disso basta aguardar toda a etapa de carregamento ser finalizada e sua aplicação estará pronta.
 
@@ -84,6 +88,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
   </plugin>
 </plugins>
 ```
+![vídeo demonstrando como adicionar o plugin do tomcat](/gifs/03-adicioando-o-plugin-do-tomcat.gif)
 
 3) Adicione um segundo plugin dentro do bloco *plugins*, conforme código a seguir:
 
@@ -97,6 +102,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
     </configuration>
 </plugin>
 ```
+![vídeo demonstrando como adicionar o plugin do maven-war](/gifs/04-adicioando-o-plugin-do-maven.gif)
 
 4) O resultado final conterá a seguinte ficará da seguinte forma, conforme código a seguir:
 
@@ -138,6 +144,8 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 6) Após o processo de carregamento, abra uma aba no seu navegador e digite o endereço: http://localhost:8080
 
 7) Uma página web deverá ser renderizada com a mensagem **Hello, world!**
+
+![vídeo demonstrando como executar o projeto criando](/gifs/05-executando-o-servidor.gif)
 
 8) Revise tudo que foi criado até aqui!
 
