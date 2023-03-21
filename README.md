@@ -186,3 +186,17 @@ Agora que você já tem sua aplicação devidamente criada, e já conseguiu subi
 5) Após o diretório Java ter sido criado, vamos criar o *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft*. Esse será o pacote padrão da nossa aplicação.
 
 6) Agora vamos criar nossa primeira Classe Java, clicando com o botão direto em cima do package padrão que acabamos de criar, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: CreateCarServlet
+
+7) Agora com sua primeira servlet devidamente criada, adicione a anotação *@WebServlet* uma linha acima de onde o nome da classe esta declarado, depois adicione a extensão para a classe HttpServlet. O código resultante deverá ter ser igual o código a seguir:
+
+```java
+package br.com.carstore.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+}
+```
