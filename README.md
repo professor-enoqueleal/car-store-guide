@@ -28,22 +28,22 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 4) Na tela do assistente de novos projetos, clique em **Maven Archetype**, nesta seção, configure:
 
-- **Name**: carsoft
-- **Location**: Mantenha o valor padrão
-- **JDK**: Escolha a JDK instalada no menu suspenso
-  OBS: Caso não tenha nenhuma JDK Instalada, ciente em *Download JDK* no menu suspenso, selecione a versão 11 no campo version e depois clique no botão *Download*.
-- **Catalog**: Mantenha o valor padrão
-- **Archetype**: maven-archetype-webapp
+  - **Name**: carsoft
+  - **Location**: Mantenha o valor padrão
+  - **JDK**: Escolha a JDK instalada no menu suspenso
+    OBS: Caso não tenha nenhuma JDK Instalada, clique em *Download JDK* e no menu suspenso, selecione a versão 11 no campo version e depois clique no botão *Download*.
+  - **Catalog**: Mantenha o valor padrão
+  - **Archetype**: maven-archetype-webapp
 
   Na seção **Advanced Settings**, configure:
-  - GroupId: br.com.carsoft
-  - ArtifactId: carsoft
-  - Version: 1.0-SNAPSHOT
+  - **GroupId**: br.com.carsoft
+  - **ArtifactId**: carsoft
+  - **Version**: 1.0-SNAPSHOT
 
 
 5) Clique no botão *Create*
 
-![víde demonstrando como criar um novo projeto usando o archetype web](/gifs/02-criando-o-projeto.gif)
+![vídeo demonstrando como criar um novo projeto usando um archetype maven para projeto web](/gifs/02-criando-o-projeto.gif)
 
 Depois disso basta aguardar toda a etapa de carregamento ser finalizada e sua aplicação estará pronta.
 
@@ -55,6 +55,7 @@ Parabéns! :+1:
 
 Você criou uma nova aplicação Web utilizando Java com Maven, com base em um Archetype Web.
 
+---
 
 ## Tarefa 2: Adicionar o Tomcat plugin e o Maven War Plugin
 
@@ -104,7 +105,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 ```
 ![vídeo demonstrando como adicionar o plugin do maven-war](/gifs/04-adicioando-o-plugin-do-maven.gif)
 
-4) O resultado final conterá a seguinte ficará da seguinte forma, conforme código a seguir:
+4) O resultado final deve ser igual ao código a seguir:
 
 ```xml
 <plugins>
@@ -139,13 +140,13 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 </plugins>
 ```
 
-5) Feito isso, já é possível executar sua aplicação e ver sua primeira página web. Para isso, navegue até o menu Maven, expanda o projeto *carstore*, *plugins*, *tomcat7* e clique duas vezes na opção *tomcat7:run*
+5) Feito isso, já é possível executar sua aplicação e ver sua primeira página web sendo renderizada no browser. Para isso, navegue até o menu Maven dentro do IntelliJ, expanda o projeto *carstore*, depois clique em *plugins*, depois clique em *tomcat7* e por ultimo, clique duas vezes na opção *tomcat7:run*
 
-6) Após o processo de carregamento, abra uma aba no seu navegador e digite o endereço: http://localhost:8080
+6) Após o processo de carregamento, abra uma aba no seu navegador e digite o seguinte endereço: http://localhost:8080
 
-7) Uma página web deverá ser renderizada com a mensagem **Hello, world!**
+7) Uma página web deverá ser renderizada contendo a mensagem **Hello, world!**
 
-![vídeo demonstrando como executar o projeto criando](/gifs/05-executando-o-servidor.gif)
+![vídeo demonstrando como executar o projeto que foi criando](/gifs/05-executando-o-servidor.gif)
 
 8) Revise tudo que foi criado até aqui!
 
