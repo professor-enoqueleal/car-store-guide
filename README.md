@@ -8,23 +8,23 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 - Criar uma aplicação Web com Java
 - Subir um servidor Tomcat (Servlet Container) Embed para executar sua aplicação Java
-- Fazer requisições através de um formulário HTML e capturar essa requisição em uma Servlet
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet
 
 ## Tarefa 1: Criar uma aplicação Java utilizando o IntelliJ
 
-1) Garanta que você possui o IntelliJ Instalado na sua maquina. Caso não tenha faça a instalação conforme demonstrado nesse vídeo: [Instalando o IntelliJ no Windows](https://youtu.be/RBxAySum8UU).
+1) Garanta que você possui o IntelliJ Instalado em seu computador. Caso não tenha faça a instalação conforme demonstrado nesse vídeo: [Instalando o IntelliJ no Windows](https://youtu.be/RBxAySum8UU).
 
 ![vídeo demonstrando como installar o intellij no windows](/gifs/01-instalando-intellij.gif)
 
 2) Abra o IntelliJ
 
-OBS: Caso seja a primeira vez que esteja abrindo o IntelliJ na sua maquina, você precisa clicar no *checkbox* para confirmar que leu os termos de uso da ferramenta e clicar em *continue*.
+  OBS: Caso seja a primeira vez que esteja abrindo o IntelliJ na sua maquina, você precisa clicar no *checkbox* para confirmar que leu os termos de uso da ferramenta e depois clicar no botão *continue*.
 
-Na tela seguinte, você precisa escolher se deseja compartilhar os dados de uso de forma anônima ou não, clique em *Don't Send*.
+  Na tela seguinte, você precisa escolher se deseja compartilhar o uso dos seus dados de forma anônima. Sugiro que selecione não, clicando em *Don't Send*.
 
-Caso contrário, você pode desconsiderar esse trecho.
+  Se não for a primeira vez que você esteja usando o IntelliJ nesse computador, você pode desconsiderar esse trecho.
 
-3) Depois que o IntelliJ estiver aberto, na tela de boas vindas, cliquei no menu *Projects* e depois no botão *New Project*.
+3) Depois que o IntelliJ estiver aberto, na tela de boas vindas (welcome), cliquei no menu *Projects* e depois clique no botão *New Project*.
 
 4) Na tela do assistente de novos projetos, clique em **Maven Archetype**, nesta seção, configure:
 
@@ -47,22 +47,22 @@ Caso contrário, você pode desconsiderar esse trecho.
 
 Depois disso basta aguardar toda a etapa de carregamento ser finalizada e sua aplicação estará pronta.
 
-OBS: O processo de carregamento pode demorar alguns minutos caso seja a primeira vez que você esteja executando esse processo.
+OBS: O processo de carregamento pode demorar alguns minutos, você deve aguardar toda a etapa de carregamento ser finalizada.
 
 6) Revise tudo que foi criado até aqui!
 
 Parabéns! :+1:
 
-Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Com isso já podemos avançar para próxima etapa.
+Você criou uma nova aplicação Web utilizando Java com Maven, com base em um Archetype Web.
 
 
-## Tarefa 2: Adicionar o Tomcat plugin e o Maven Plugin
+## Tarefa 2: Adicionar o Tomcat plugin e o Maven War Plugin
 
-Agora que você já tem sua aplicação devidamente criada, chegou a hora de adicionar o plugin do Tomcat (Servlet Container), para que você possa executar sua aplicação Web em um servidor com esforços adicionais.
+Agora que você já tem sua aplicação devidamente criada, chegou a hora de adicionar o plugin do Tomcat (Servlet Container), para que você possa executar sua aplicação Web em um servidor sem esforços adicionais.
 
 1) Com a aplicação criada, abra o arquivo *pom.xml*
 
-2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. Ele é composto por diferentes seções. Encontre a seção *build*. Dentro da seção build, preencha com o bloco de código a seguir:
+2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. O arquivo pom.xml é composto por diferentes seções. Encontre a seção *build*. Dentro da seção build, adicione o bloco de código a seguir:
 
 ```xml
 <plugins>
@@ -152,4 +152,3 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 Parabéns! :+1:
 
 Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Adicionou o plugin do Tomcat Embed e o Plugin de Build do Maven e com isso já possível subir o servidor e renderizar a nossa primeira pagina web (Hello, world!).
-
