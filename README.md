@@ -178,12 +178,15 @@ Agora que você já tem sua aplicação devidamente criada, e já conseguiu subi
     <version>1.2</version>
 </dependency>
 ```
+![vídeo demonstrando como adicionar as dependência no pom.xml do projeto](/gifs/06-adicionando-dependencias.gif)
 
 3) Salve as alterações e clique e clique no botão *Load Maven Changes* para que o IntelliJ possa fazer o download das novas *dependências* de forma automática para você. Aguarde o carregamento finalizar.
 
 4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carsoft*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
 
 5) Após o diretório Java ter sido criado, vamos criar o *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft*. Esse será o pacote padrão da nossa aplicação.
+
+![vídeo demonstrando como criar o diretório java o e package br.com.carsoft](/gifs/07-criando-diretorio-java-e-package.gif)
 
 6) Agora vamos criar nossa primeira Classe Java, clicando com o botão direto em cima do package padrão que acabamos de criar, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: CreateCarServlet
 
@@ -200,3 +203,4 @@ public class CreateCarServlet extends HttpServlet {
 
 }
 ```
+![vídeo demonstrando como criar a classe create car servlet e adicionar a anotação @ web servlet](/gifs/08-criando-servlet.gif)
