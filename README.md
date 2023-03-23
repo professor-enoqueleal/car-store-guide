@@ -63,7 +63,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 
 1) Com a aplicação criada, abra o arquivo *pom.xml*
 
-2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. O arquivo pom.xml é composto por diferentes seções. Encontre a seção *build*. Dentro da seção build, adicione o bloco de código a seguir:
+2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. Esta arquivo é composto por diferentes seções. Encontre a seção *<build>*. Dentro da seção <build>, adicione o bloco de código a seguir:
 
 ```xml
 <plugins>
@@ -140,29 +140,31 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 </plugins>
 ```
 
-5) Feito isso, já é possível executar sua aplicação e ver sua primeira página web sendo renderizada no browser. Para isso, navegue até o menu Maven dentro do IntelliJ, expanda o projeto *carstore*, depois clique em *plugins*, depois clique em *tomcat7* e por ultimo, clique duas vezes na opção *tomcat7:run*
+5) Salve as alterações (CTRL + S) e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que os novos *plugins* foram adicionados ao seu projeto e irá fazer o download dos mesmos de forma automática para você. Aguarde o carregamento finalizar.
 
-6) Após o processo de carregamento, abra uma aba no seu navegador e digite o seguinte endereço: http://localhost:8080
+6) Feito isso, já é possível executar sua aplicação e renderizar sua primeira página web no browser. Para isso, navegue até o menu Maven dentro do IntelliJ, expanda o projeto *carstore*, depois clique em *plugins*, depois clique em *tomcat7* e por ultimo, clique duas vezes na opção *tomcat7:run*
 
-7) Uma página web deverá ser renderizada contendo a mensagem **Hello, world!**
+7) Após o processo de carregamento, abra uma aba no seu browser e digite o seguinte endereço: http://localhost:8080
+
+8) Uma página web deverá ser renderizada contendo a mensagem **Hello, world!**
 
 ![vídeo demonstrando como executar o projeto que foi criando](/gifs/05-executando-o-servidor.gif)
 
-8) Revise tudo que foi criado até aqui!
+10) Revise tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
-Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Adicionou o plugin do Tomcat Embed e o Plugin de Build do Maven e com isso já possível subir o servidor e renderizar a nossa primeira pagina web (Hello, world!).
+Você criou uma nova aplicação Web utilizando **Java**, **Maven** e um **Archetype** Web. Adicionou o plugin do *Tomcat Embed* e o Plugin de *Build* do Maven. Com isso já é possível subir o servidor e renderizar a nossa primeira pagina web **(Hello, world!)**.
 
 ---
 
-## Tarefa 3: Criando sua primeira Servlet e fazendo uma requisição
+## Tarefa 3: Criando sua primeira Servlet e fazendo uma requisição *http*
 
-Agora que você já tem sua aplicação devidamente criada, e já conseguiu subir seu servidor web, cjegou a hora de criar sua primeira Servlet e fazer sua primeira requisição **http**
+Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web, chegou a hora de criar sua primeira Servlet e fazer sua primeira requisição **http**
 
 1) Abra novamente o arquivo arquivo *pom.xml*
 
-2) Localize o bloco *</dependencies>* e adicione a dependência da API de Servlet no **pom.xml** da sua aplicação, conforme o código a seguir:
+2) Localize o bloco *</dependencies>*. Você deverá adicionar duas dependências dentro do bloco *</dependencies>* no **pom.xml** da sua aplicação, conforme o código a seguir:
 
 ```xml
 <dependency>
@@ -180,17 +182,17 @@ Agora que você já tem sua aplicação devidamente criada, e já conseguiu subi
 ```
 ![vídeo demonstrando como adicionar as dependência no pom.xml do projeto](/gifs/06-adicionando-dependencias.gif)
 
-3) Salve as alterações e clique e clique no botão *Load Maven Changes* para que o IntelliJ possa fazer o download das novas *dependências* de forma automática para você. Aguarde o carregamento finalizar.
+3) Salve as alterações (CTRL + S) e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que as novas *dependências* foram adicionadas ao seu projeto e irá fazer o download mesmas de forma automática para você. Aguarde o carregamento finalizar.
 
 4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carsoft*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
 
-5) Após o diretório Java ter sido criado, vamos criar o *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft*. Esse será o pacote padrão da nossa aplicação.
+5) Após o diretório Java ter sido criado, vamos criar um *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft.servlet*. Esse será o pacote padrão da nossa aplicação.
 
 ![vídeo demonstrando como criar o diretório java o e package br.com.carsoft](/gifs/07-criando-diretorio-java-e-package.gif)
 
-6) Agora vamos criar nossa primeira Classe Java, clicando com o botão direto em cima do package padrão que acabamos de criar, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: CreateCarServlet
+6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique com o botão direto em cima do package que acabamos de criar (*br.com.carsoft.servlet*), selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **CreateCarServlet**
 
-7) Agora com sua primeira servlet devidamente criada, adicione a anotação *@WebServlet* uma linha acima de onde o nome da classe esta declarado, depois adicione a extensão para a classe HttpServlet. O código resultante deverá ter ser igual o código a seguir:
+7) Agora com sua primeira *servlet* devidamente criada, é necessário adicionar uma anotação *@WebServlet*. Essa anotação deverá ficar uma linha acima de onde o nome da classe **CreateCarServlet** esta declarado, depois adicione a extensão (extends) para a classe HttpServlet. O código resultante deverá ficar igual ao código a seguir:
 
 ```java
 package br.com.carstore.servlet;
