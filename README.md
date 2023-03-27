@@ -1,4 +1,4 @@
-# Laboratório - Criando uma Aplicação Web com Java
+# Laboratório 1 - Criando uma Aplicação Web com Java
 
 ## Visão geral e objetivos do laboratório
 
