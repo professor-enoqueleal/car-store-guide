@@ -127,3 +127,13 @@ Para saber mais sobre o H2 DB, visite a documentação oficial através desse [L
 
 4) Salve tudo (CTRL + S) e execute sua aplicação. Com o listener do H2 devidamente registrado, é possível acessar a console de gerênciamento através do link: http://localhost:8080/console
 
+5) Faça login na console do H2
+    * Driver Class: org.h2.Driver
+    * JDBC URL: jdbc:h2:~/test
+    * User Name: sa
+    * Password: sa
+
+6) Após efetuar o login, crie sua primeira tabela:
+```sql
+CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255));
+```
