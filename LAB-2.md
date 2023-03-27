@@ -70,3 +70,60 @@ OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependên
 Parabéns! :+1:
 
 Você adicionu a dependência do H2 DB (Banco de dados em memória).
+
+## Tarefa 2: Registrando o Servlet listener do H2 DB
+
+Para saber mais sobre o H2 DB, visite a documentação oficial através desse [LINK](https://www.h2database.com)
+
+1) Agora que a dependência do H2 foi adicionada ao projeto, é necessário registrar o listener do H2 no arquivo web.xml. Navegue até o arquivo web.xml que fica no caminho: car-store/src/main/webapp/WEB-INF/web.xml
+
+2) Com o arquivo web.xml aberto, adicione o listener dentro do bloco *web-app* conforme código a seguir:
+
+```xml
+<listener>
+    <listener-class>org.h2.server.web.DbStarter</listener-class>
+</listener>
+
+<servlet>
+    <servlet-name>H2Console</servlet-name>
+    <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>H2Console</servlet-name>
+    <url-pattern>/console/*</url-pattern>
+</servlet-mapping>
+```
+
+3) O resultado final deverá ser igual ao código a seguir:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+
+    <display-name>car-store</display-name>
+
+    <listener>
+        <listener-class>org.h2.server.web.DbStarter</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>H2Console</servlet-name>
+        <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>H2Console</servlet-name>
+        <url-pattern>/console/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+```
+
+4) Salve tudo (CTRL + S) e execute sua aplicação. Com o listener do H2 devidamente registrado, é possível acessar a console de gerênciamento através do link: http://localhost:8080/console
+
