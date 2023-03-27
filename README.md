@@ -206,3 +206,98 @@ public class CreateCarServlet extends HttpServlet {
 }
 ```
 ![vídeo demonstrando como criar a classe create car servlet e adicionar a anotação @ web servlet](/gifs/08-criando-servlet.gif)
+
+8) O Próximo passo é sobrescrever (Override) o método doPost(). O método doPost é o método que vai receber as requisições http feitas com o método POST. Para sobrescrever o método doPost, basta digitar doPost e depois usar as teclas de atalho (CTRL + barra de espaço) dentro da declaração da sua classe. O auto complete colocará uma sugestão, basta apertar a tecla enter que o método será sobrescrito. O código resultante deverá ficar igual ao código a seguir:
+
+```java
+package br.com.carsoft.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        super.doPost(req, resp);
+
+    }
+
+}
+```
+![vídeo demonstrando como sobrescrever o método doPost](/gifs/09.gif)
+
+9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), implemente o seguinte código:
+
+```java
+String carName = request.getParameter("car-name");
+
+System.out.println(carName);
+
+request.getRequestDispatcher("index.html").forward(request, response);
+```
+
+O código completo deverá ficar igual ao código a seguir:
+
+```java
+package br.com.carsoft.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String carName = request.getParameter("car-name");
+
+        System.out.println(carName);
+
+        request.getRequestDispatcher("index.html").forward(request, response);
+
+    }
+
+}
+```
+
+10) O último passo será a implementação do formulário html. Esse formulário deverá conter três elementos. Um label contendo o nome do campo, um input para que o usuário possa escrever o valor no formato texto e um button para que o usuário possa clicar e submeter a requisição http para o servidor.
+
+No seu projeto, navegue até o diretório: car-store-guide/app/src/main/webapp/index.html
+
+A implementação do formulário deverá ser igual ao código a seguir:
+
+```html
+<html>
+<body>
+<h2>Create Car</h2>
+
+<form action="/create-car" method="post">
+
+    <label>Car Name</label>
+    <input type="text" name="car-name" id="car-name">
+
+    <button type="submit">Register</button>
+
+</form>
+
+</body>
+</html>
+```
+
+11) Revise tudo que foi feito até aqui!
+
+Parabéns! :+1:
+
+Você criou uma nova aplicação Web utilizando **Java**, **Maven** e um **Archetype** Web. Adicionou o plugin do *Tomcat Embed* e o Plugin de *Build* do Maven. Criou sua primeira Servlet e sobrescreveu o método doPost, preparando ele para receber um atributo que você receberá no Java quando o seu formulário html for submetido. Depois você criou um formulário html contento um campo input text para que o usuário possa fazer a requisiçãp. Com isso já é possível subir o servidor e renderizar a nossa primeira página web, fazer a primeira requisição e recuperar o valor enviado na sua Java Servlet.
