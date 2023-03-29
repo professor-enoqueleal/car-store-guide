@@ -14,11 +14,11 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web, chegou a hora de adicionar uma camada de persistência de dados na sua aplicação. 
 
-1) Abra o arquivo arquivo *pom.xml*
+1) Abra o arquivo arquivo **pom.xml**
 
-2) Localize o bloco *</dependencies>*. Você deverá adicionar uma nova dependência dentro do bloco *</dependencies>* no **pom.xml** da sua aplicação. 
+2) Localize o bloco **dependencies**. Você deverá adicionar uma nova dependência dentro deste bloco.
 
-OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco dependencies: 
+OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco **dependencies**: 
 
 ```xml
 <dependency>
@@ -63,21 +63,20 @@ OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependên
 
 ```
 
-![vídeo demonstrando como adicionar a nova dependência no projeto](/gifs/10.gif)
-
 4) Revise tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
 Você adicionu a dependência do H2 DB (Banco de dados em memória).
 
+
 ## Tarefa 2: Registrando o listener do H2 DB no arquivo web.xml
 
-Para saber mais sobre o H2 DB, visite a documentação oficial através desse [LINK](https://www.h2database.com)
+Para saber mais sobre o H2 DB, visite a documentação oficial através desse link: [H2 Database Engine](https://www.h2database.com)
 
-1) Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o listener do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
+1) Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o *listener* do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
 
-2) Com o arquivo web.xml aberto, adicione o listener dentro do bloco *web-app* conforme código a seguir:
+2) Com o arquivo web.xml aberto, adicione o *listener* dentro do bloco *web-app* conforme código a seguir:
 
 ```xml
 <listener>
@@ -127,16 +126,16 @@ OBS: Nenhuma configuração deverá ser removida nesse processo.
 </web-app>
 ```
 
-4) Salve tudo (CTRL + S) e execute sua aplicação (tomcat7:run). Com o listener do H2 devidamente registrado, é possível acessar a console de gerênciamento do *H2 DB* através do link: http://localhost:8080/console
+4) Salve tudo **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. Com o *listener* do **H2 DB** devidamente registrado, é possível acessar a console de gerênciamento através do link: *http://localhost:8080/console*
 
-5) Após acessar a console do H2 DB através do endereço http://localhost:8080/console, faça login na utilizando as informações a seguir:
+5) Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
 
-    * Driver Class: org.h2.Driver
-    * JDBC URL: jdbc:h2:~/test
-    * User Name: sa
-    * Password: sa
+    * Driver Class: *org.h2.Driver*
+    * JDBC URL: *jdbc:h2:~/test*
+    * User Name: *sa*
+    * Password: *sa*
 
-6) Após efetuar o login, você poderá criar sua primeira tabela. Criar criar a tabela CAR, utilize o comando a seguir:
+6) Após efetuar o login, você poderá criar sua primeira tabela. Você deverá criar uma tabela chamada **CAR**. Para isso utilize o comando **SQL** a seguir:
 
 ```sql
 CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
