@@ -18,7 +18,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 2) Localize o bloco *</dependencies>*. Você deverá adicionar uma nova dependência dentro do bloco *</dependencies>* no **pom.xml** da sua aplicação. 
 
-OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco *</dependencies>*: 
+OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco dependencies: 
 
 ```xml
 <dependency>
@@ -71,11 +71,11 @@ Parabéns! :+1:
 
 Você adicionu a dependência do H2 DB (Banco de dados em memória).
 
-## Tarefa 2: Registrando o Servlet listener do H2 DB
+## Tarefa 2: Registrando o listener do H2 DB no arquivo web.xml
 
 Para saber mais sobre o H2 DB, visite a documentação oficial através desse [LINK](https://www.h2database.com)
 
-1) Agora que a dependência do H2 foi adicionada ao projeto, é necessário registrar o listener do H2 no arquivo web.xml. Navegue até o arquivo web.xml que fica no caminho: car-store/src/main/webapp/WEB-INF/web.xml
+1) Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o listener do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
 
 2) Com o arquivo web.xml aberto, adicione o listener dentro do bloco *web-app* conforme código a seguir:
 
@@ -95,6 +95,8 @@ Para saber mais sobre o H2 DB, visite a documentação oficial através desse [L
     <url-pattern>/console/*</url-pattern>
 </servlet-mapping>
 ```
+
+OBS: Nenhuma configuração deverá ser removida nesse processo.
 
 3) O resultado final deverá ser igual ao código a seguir:
 
@@ -125,15 +127,17 @@ Para saber mais sobre o H2 DB, visite a documentação oficial através desse [L
 </web-app>
 ```
 
-4) Salve tudo (CTRL + S) e execute sua aplicação. Com o listener do H2 devidamente registrado, é possível acessar a console de gerênciamento através do link: http://localhost:8080/console
+4) Salve tudo (CTRL + S) e execute sua aplicação (tomcat7:run). Com o listener do H2 devidamente registrado, é possível acessar a console de gerênciamento do *H2 DB* através do link: http://localhost:8080/console
 
-5) Faça login na console do H2
+5) Após acessar a console do H2 DB através do endereço http://localhost:8080/console, faça login na utilizando as informações a seguir:
+
     * Driver Class: org.h2.Driver
     * JDBC URL: jdbc:h2:~/test
     * User Name: sa
     * Password: sa
 
-6) Após efetuar o login, crie sua primeira tabela:
+6) Após efetuar o login, você poderá criar sua primeira tabela. Criar criar a tabela CAR, utilize o comando a seguir:
+
 ```sql
-CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255));
+CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
 ```
