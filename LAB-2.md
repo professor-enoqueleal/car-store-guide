@@ -18,7 +18,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 2) Localize o bloco **dependencies**. Você deverá adicionar uma nova dependência dentro deste bloco.
 
-OBS: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco **dependencies**: 
+**OBS**: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco **dependencies**: 
 
 ```xml
 <dependency>
@@ -72,7 +72,7 @@ Você adicionu a dependência do H2 DB (Banco de dados em memória).
 
 ## Tarefa 2: Registrando o listener do H2 DB no arquivo web.xml
 
-Para saber mais sobre o H2 DB, visite a documentação oficial através desse link: [H2 Database Engine](https://www.h2database.com)
+:warning: Para saber mais sobre o H2 DB, visite a documentação oficial através desse link: [H2 Database Engine](https://www.h2database.com)
 
 1) Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o *listener* do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
 
@@ -95,7 +95,7 @@ Para saber mais sobre o H2 DB, visite a documentação oficial através desse li
 </servlet-mapping>
 ```
 
-OBS: Nenhuma configuração deverá ser removida nesse processo.
+**OBS**: Nenhuma configuração deverá ser removida nesse processo.
 
 3) O resultado final deverá ser igual ao código a seguir:
 
