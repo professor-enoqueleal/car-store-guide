@@ -231,7 +231,7 @@ public class CreateCarServlet extends HttpServlet {
 
 }
 ```
-![vídeo demonstrando como sobrescrever o método doPost](/gifs/09.gif)
+![vídeo demonstrando como sobrescrever o método doPost](/gifs/09-override-dopost.gif)
 
 9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), apague a chamada ao método doPost() da classe mãe (Main class) e na sequência implemente o seguinte código:
 
