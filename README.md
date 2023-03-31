@@ -12,9 +12,9 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 ## Tarefa 1: Criar uma aplicação Java utilizando o IntelliJ
 
-1) Garanta que você possui o IntelliJ Instalado em seu computador. Caso não tenha faça a instalação conforme demonstrado nesse vídeo: [Instalando o IntelliJ no Windows](https://youtu.be/RBxAySum8UU).
+1) Garanta que você possui o IntelliJ Instalado em seu computador. Caso não tenha faça a instalação conforme demonstrado nesse gif animado: [Instalando o IntelliJ no Windows](https://youtu.be/RBxAySum8UU).
 
-![vídeo demonstrando como installar o intellij no windows](/gifs/01-instalando-intellij.gif)
+![gif animado demonstrando como installar o intellij no windows](/gifs/01-instalando-intellij.gif)
 
 2) Abra o IntelliJ
 
@@ -43,7 +43,7 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 5) Clique no botão *Create*
 
-![vídeo demonstrando como criar um novo projeto usando um archetype maven para projeto web](/gifs/02-criando-o-projeto.gif)
+![gif animado demonstrando como criar um novo projeto usando um archetype maven para projeto web](/gifs/02-criando-o-projeto.gif)
 
 Depois disso basta aguardar toda a etapa de carregamento ser finalizada e sua aplicação estará pronta.
 
@@ -89,7 +89,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
   </plugin>
 </plugins>
 ```
-![vídeo demonstrando como adicionar o plugin do tomcat](/gifs/03-adicioando-o-plugin-do-tomcat.gif)
+![gif animado demonstrando como adicionar o plugin do tomcat](/gifs/03-adicioando-o-plugin-do-tomcat.gif)
 
 3) Adicione um segundo plugin dentro do bloco *plugins*, conforme código a seguir:
 
@@ -103,7 +103,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
     </configuration>
 </plugin>
 ```
-![vídeo demonstrando como adicionar o plugin do maven-war](/gifs/04-adicioando-o-plugin-do-maven.gif)
+![gif animado demonstrando como adicionar o plugin do maven-war](/gifs/04-adicioando-o-plugin-do-maven.gif)
 
 4) O resultado final deve ser igual ao código a seguir:
 
@@ -148,7 +148,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 
 8) Uma página web deverá ser renderizada contendo a mensagem **Hello, world!**
 
-![vídeo demonstrando como executar o projeto que foi criando](/gifs/05-executando-o-servidor.gif)
+![gif animado demonstrando como executar o projeto que foi criando](/gifs/05-executando-o-servidor.gif)
 
 10) Revise tudo que foi feito até aqui!
 
@@ -180,7 +180,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
     <version>1.2</version>
 </dependency>
 ```
-![vídeo demonstrando como adicionar as dependência no pom.xml do projeto](/gifs/06-adicionando-dependencias.gif)
+![gif animado demonstrando como adicionar as dependência no pom.xml do projeto](/gifs/06-adicionando-dependencias.gif)
 
 3) Salve todas as alterações **(CTRL + S)** e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que as novas *dependências* foram adicionadas ao seu projeto e irá fazer o download mesmas de forma automática para você. Aguarde o carregamento finalizar.
 
@@ -188,7 +188,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 5) Após o diretório Java ter sido criado, vamos criar um *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carstore.servlet*. Esse será o pacote padrão da nossa aplicação.
 
-![vídeo demonstrando como criar o diretório java o e package br.com.carstore](/gifs/07-criando-diretorio-java-e-package.gif)
+![gif animado demonstrando como criar o diretório java o e package br.com.carstore](/gifs/07-criando-diretorio-java-e-package.gif)
 
 6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique com o botão direto em cima do package que acabamos de criar (*br.com.carstore.servlet*), selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **CreateCarServlet**
 
@@ -205,7 +205,7 @@ public class CreateCarServlet extends HttpServlet {
 
 }
 ```
-![vídeo demonstrando como criar a classe create car servlet e adicionar a anotação @ web servlet](/gifs/08-criando-servlet.gif)
+![gif animado demonstrando como criar a classe create car servlet e adicionar a anotação @ web servlet](/gifs/08-criando-servlet.gif)
 
 8) O Próximo passo é sobrescrever (Override) o método doPost(). O método doPost é o método que vai receber as requisições http feitas com o método POST. Para sobrescrever o método doPost, basta digitar doPost e depois usar as teclas de atalho (CTRL + barra de espaço) dentro da declaração da sua classe. O auto complete colocará uma sugestão, basta apertar a tecla enter que o método será sobrescrito. O código resultante deverá ficar igual ao código a seguir:
 
@@ -231,7 +231,7 @@ public class CreateCarServlet extends HttpServlet {
 
 }
 ```
-![vídeo demonstrando como sobrescrever o método doPost](/gifs/09-override-dopost.gif)
+![gif animado demonstrando como sobrescrever o método doPost](/gifs/09-override-dopost.gif)
 
 9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), apague a chamada ao método doPost() da classe mãe (Main class) e na sequência implemente o seguinte código:
 
@@ -271,6 +271,7 @@ public class CreateCarServlet extends HttpServlet {
 
 }
 ```
+![gif animado demonstrando como implementar a chamada para o método getParameter](/gifs/10-implementando-get-parameter.gif)
 
 10) O último passo será a implementação do formulário html. Esse formulário deverá conter três elementos. Um label contendo o nome do campo, um input para que o usuário possa escrever o valor no formato texto e um button para que o usuário possa clicar e submeter a requisição http para o servidor.
 
