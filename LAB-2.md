@@ -126,7 +126,7 @@ Você adicionu a dependência do H2 DB (Banco de dados em memória).
 </web-app>
 ```
 
-4) Salve tudo **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. Com o *listener* do **H2 DB** devidamente registrado, é possível acessar a console de gerênciamento através do link: *http://localhost:8080/console*
+4) Salve todas as alterações **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. Com o *listener* do **H2 DB** devidamente registrado, é possível acessar a console de gerênciamento através do link: *http://localhost:8080/console*
 
 5) Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
 

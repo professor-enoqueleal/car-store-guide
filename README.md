@@ -140,7 +140,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 </plugins>
 ```
 
-5) Salve as alterações (CTRL + S) e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que os novos *plugins* foram adicionados ao seu projeto e irá fazer o download dos mesmos de forma automática para você. Aguarde o carregamento finalizar.
+5) Salve todas as alterações **(CTRL + S)** e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que os novos *plugins* foram adicionados ao seu projeto e irá fazer o download dos mesmos de forma automática para você. Aguarde o carregamento finalizar.
 
 6) Feito isso, já é possível executar sua aplicação e renderizar sua primeira página web no browser. Para isso, navegue até o menu Maven dentro do IntelliJ, expanda o projeto *carstore*, depois clique em *plugins*, depois clique em *tomcat7* e por ultimo, clique duas vezes na opção *tomcat7:run*
 
@@ -182,7 +182,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 ```
 ![vídeo demonstrando como adicionar as dependência no pom.xml do projeto](/gifs/06-adicionando-dependencias.gif)
 
-3) Salve as alterações (CTRL + S) e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que as novas *dependências* foram adicionadas ao seu projeto e irá fazer o download mesmas de forma automática para você. Aguarde o carregamento finalizar.
+3) Salve todas as alterações **(CTRL + S)** e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que as novas *dependências* foram adicionadas ao seu projeto e irá fazer o download mesmas de forma automática para você. Aguarde o carregamento finalizar.
 
 4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carstore*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
 
