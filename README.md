@@ -28,7 +28,7 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 4) Na tela do assistente de novos projetos, clique em **Maven Archetype**, nesta seção, configure:
 
-  - **Name**: carsoft
+  - **Name**: carstore
   - **Location**: Mantenha o valor padrão
   - **JDK**: Escolha a JDK instalada no menu suspenso
     OBS: Caso não tenha nenhuma JDK Instalada, clique em *Download JDK* e no menu suspenso, selecione a versão 11 no campo version e depois clique no botão *Download*.
@@ -36,8 +36,8 @@ Depois de concluir este laboratório, você deverá ser capaz de:
   - **Archetype**: maven-archetype-webapp
 
   Na seção **Advanced Settings**, configure:
-  - **GroupId**: br.com.carsoft
-  - **ArtifactId**: carsoft
+  - **GroupId**: br.com.carstore
+  - **ArtifactId**: carstore
   - **Version**: 1.0-SNAPSHOT
 
 
@@ -184,13 +184,13 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 3) Salve as alterações (CTRL + S) e depois clique no botão *Load Maven Changes*. Com isso, o Maven irá identificar que as novas *dependências* foram adicionadas ao seu projeto e irá fazer o download mesmas de forma automática para você. Aguarde o carregamento finalizar.
 
-4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carsoft*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
+4) Após o carregamento das *dependências* finalizar, volte para a aba *Project* e navegue no seu projeto clicando na pasta *carstore*, *src* e depois em *main*. Clique com o botão direto em cima da pasta *main* e escolha a opção *New* e depois *Directory*. O assistente de criação de novos diretórios será aberto, selecione a opção Java.
 
-5) Após o diretório Java ter sido criado, vamos criar um *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carsoft.servlet*. Esse será o pacote padrão da nossa aplicação.
+5) Após o diretório Java ter sido criado, vamos criar um *package* para que possamos criar nossa primeira classe *Java*, para isso clique com o botão direto em cima do diretório Java, escolha a opção *New* e depois a opção *Package*, no assistente criação digite: *br.com.carstore.servlet*. Esse será o pacote padrão da nossa aplicação.
 
-![vídeo demonstrando como criar o diretório java o e package br.com.carsoft](/gifs/07-criando-diretorio-java-e-package.gif)
+![vídeo demonstrando como criar o diretório java o e package br.com.carstore](/gifs/07-criando-diretorio-java-e-package.gif)
 
-6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique com o botão direto em cima do package que acabamos de criar (*br.com.carsoft.servlet*), selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **CreateCarServlet**
+6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique com o botão direto em cima do package que acabamos de criar (*br.com.carstore.servlet*), selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **CreateCarServlet**
 
 7) Agora com sua primeira *servlet* devidamente criada, é necessário adicionar uma anotação *@WebServlet*. Essa anotação deverá ficar uma linha acima de onde o nome da classe **CreateCarServlet** esta declarado, depois adicione a extensão (extends) para a classe HttpServlet. O código resultante deverá ficar igual ao código a seguir:
 
@@ -210,7 +210,7 @@ public class CreateCarServlet extends HttpServlet {
 8) O Próximo passo é sobrescrever (Override) o método doPost(). O método doPost é o método que vai receber as requisições http feitas com o método POST. Para sobrescrever o método doPost, basta digitar doPost e depois usar as teclas de atalho (CTRL + barra de espaço) dentro da declaração da sua classe. O auto complete colocará uma sugestão, basta apertar a tecla enter que o método será sobrescrito. O código resultante deverá ficar igual ao código a seguir:
 
 ```java
-package br.com.carsoft.servlet;
+package br.com.carstore.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -225,7 +225,7 @@ public class CreateCarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        super.doPost(req, resp);
+        super.doPost(request, response);
 
     }
 
@@ -233,7 +233,7 @@ public class CreateCarServlet extends HttpServlet {
 ```
 ![vídeo demonstrando como sobrescrever o método doPost](/gifs/09.gif)
 
-9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), implemente o seguinte código:
+9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), apague a chamada ao método doPost() da classe mãe (Main class) e na sequência implemente o seguinte código:
 
 ```java
 String carName = request.getParameter("car-name");
@@ -246,7 +246,7 @@ request.getRequestDispatcher("index.html").forward(request, response);
 O código completo deverá ficar igual ao código a seguir:
 
 ```java
-package br.com.carsoft.servlet;
+package br.com.carstore.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

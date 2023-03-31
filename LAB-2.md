@@ -140,3 +140,9 @@ Você adicionu a dependência do H2 DB (Banco de dados em memória).
 ```sql
 CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
 ```
+
+7) Revise tudo que foi feito até aqui!
+
+Parabéns! :+1:
+
+Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web. Agora que você adicionou a dependência do H2 DB no arquivo pom.xml da sua aplicação, ao fazer o start (tomcat7:run), quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo.
