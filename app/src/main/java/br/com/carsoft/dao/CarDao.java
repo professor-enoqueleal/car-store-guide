@@ -1,28 +1,34 @@
 package br.com.carsoft.dao;
 
+import br.com.carsoft.model.Car;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class CarDao {
 
-    public static void databaseConnection(String carName) {
+    public void createCar(Car car) {
 
         String SQL = "INSERT INTO CAR (NAME) VALUES (?)";
 
         try {
 
-            Connection conn = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-            System.out.println("success in database connection");
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
-            PreparedStatement preparedStatement = conn.prepareStatement(SQL);
-            preparedStatement.setString(1, carName);
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, car.getName());
             preparedStatement.execute();
 
-            conn.close();
+            connection.close();
+
+            System.out.println("success in connection");
 
         } catch (Exception e) {
-            System.out.println("Error in database connection");
+
+            System.out.println("fail in connection");
+
         }
 
     }
