@@ -1,7 +1,7 @@
-package br.com.carsoft.servlet;
+package br.com.carstore.servlet;
 
-import br.com.carsoft.dao.CarDao;
-import br.com.carsoft.model.Car;
+import br.com.carstore.dao.CarDao;
+import br.com.carstore.model.Car;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
