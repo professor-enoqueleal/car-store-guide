@@ -16,10 +16,14 @@ public class CarDao {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
+            System.out.println("success in connection");
+
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, car.getName());
             preparedStatement.execute();
+
+            System.out.println("success in insert car");
 
             connection.close();
 
