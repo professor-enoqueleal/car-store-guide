@@ -16,7 +16,7 @@ public class CarDao {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
-            System.out.println("success in connection");
+            System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -27,11 +27,9 @@ public class CarDao {
 
             connection.close();
 
-            System.out.println("success in connection");
-
         } catch (Exception e) {
 
-            System.out.println("fail in connection");
+            System.out.println("fail in database connection");
 
         }
 
