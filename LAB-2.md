@@ -141,8 +141,30 @@ Você adicionu a dependência do H2 DB (Banco de dados em memória).
 CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
 ```
 
+![gif animado demonstrando como criar_uma_tabela_no_h2_db](/gifs/11-criando-tabela-no-h2.gif)
+
 7) Revise tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
 Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web. Agora que você adicionou a dependência do H2 DB no arquivo pom.xml da sua aplicação, ao fazer o start (tomcat7:run), quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo.
+
+
+## Tarefa 3: Criando a primeira Model e a primeira DAO
+
+Agora que você já tem um banco de dados devidamente configurado, chegou a hora de criar a primeira classe model (Car) e a primeira classe DAO (CarDao).
+
+1) Agora você deve criar dois novos pacotes (packages), o primeiro se chama *dao* e o segundo *model*. Para isso, navegue até o pacote principal pacote principal (br.com.carsoft). No seu projeto, navegue até o diretório: car-store-guide/app/src/main/java/br.com.carsoft, clique com o botão direito do mouse em cima do pacote principal (br.com.carsoft) e escolha a opção *New / Package* e insira o nome do primeiro pacote (dao). Repita a operação para criar o segundo pacote (dao).
+
+No final da criação, o resultado esperado é que tenhamos agora três subpacotes dentro do pacote principal seguindo a hierarquia:
+
+car-store
++- src/
+|  +- main/
+|  |  +- java/
+|  |    +- br.com.carstore/
+|  |  |  +- dao/
+|  |  |  +- model/
+|  |  |  +- servlet/
+|  |  +- webapp/
+|  |  |  +- index.html
