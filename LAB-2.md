@@ -173,7 +173,7 @@ car-store/
 |  |  |  |..| index.html
 ```
 
-![imagem demonstrando a estrutura do projeto](/images/01-project-structure)
+![imagem demonstrando a estrutura do projeto](/images/01-project-structure.png)
 
 2) Agora com os novos pacotes devidamente criados, vamos criar a nossa classe model chamada Car. Para isso, clique com o botão direito do mouse em cima do pacote model, escolha a opção *New, Java Class*, depois digite *Car* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **Car**.
 
