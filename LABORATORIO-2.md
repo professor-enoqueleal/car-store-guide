@@ -280,3 +280,9 @@ Parabéns! :+1:
 Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web, criou a primeira classe model e dao. Implementou a lógica para abrir uma conexão com o bando de dados (H2) e o comando de persistência (insert) dos dados no banco.
 
 Agora ao fazer o start *(tomcat7:run)*, quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo. Nesse momento a parte do create do nosso CRUD está implementada e funcionando.
+
+Voltar para: [LABORATÓRIO 1](./LABORATORIO-1.md)
+
+*ou*
+
+Ir para: LABORATÓRIO 3
