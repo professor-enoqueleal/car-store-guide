@@ -45,25 +45,25 @@ Depois de concluir este laboratório, você deverá ser capaz de:
 
 ![gif animado demonstrando como criar um novo projeto usando um archetype maven para projeto web](/gifs/02-criando-o-projeto.gif)
 
-Depois disso basta aguardar toda a etapa de carregamento ser finalizada e sua aplicação estará pronta.
+Depois disso basta aguardar toda a etapa de carregamento ser finalizada. No final sua aplicação estará pronta.
 
-OBS: O processo de carregamento pode demorar alguns minutos, você deve aguardar toda a etapa de carregamento ser finalizada.
+OBS: O processo de carregamento pode demorar alguns minutos, é imprescindível aguardar toda a etapa de carregamento ser finalizada.
 
-6) Revise tudo que foi criado até aqui!
+6) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
-Você criou uma nova aplicação Web utilizando Java com Maven, com base em um Archetype Web.
+Agora temos uma nova aplicação Web criada utilizando Java e Maven, com base em um Archetype Web.
 
 ---
 
 ## Tarefa 2: Adicionar o Tomcat plugin e o Maven War Plugin
 
-Agora que você já tem sua aplicação devidamente criada, chegou a hora de adicionar o plugin do Tomcat (Servlet Container), para que você possa executar sua aplicação Web em um servidor sem esforços adicionais.
+Agora que temps a aplicação devidamente criada, chegou a hora de adicionar o plugin do Tomcat (Servlet Container). Dessa forma será possível executar a aplicação Web no servidor Tomcat sem esforços adicionais.
 
 1) Com a aplicação criada, abra o arquivo *pom.xml*
 
-2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. Esta arquivo é composto por diferentes seções. Encontre a seção *<build>*. Dentro da seção <build>, adicione o bloco de código a seguir:
+2) O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção e empacotamento de uma aplicação Java. Este arquivo é composto por diferentes seções. Encontre a seção *<build>*. Dentro da seção <build>, adicione o bloco de código a seguir:
 
 ```xml
 <plugins>
@@ -105,7 +105,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 ```
 ![gif animado demonstrando como adicionar o plugin do maven-war](/gifs/04-adicioando-o-plugin-do-maven.gif)
 
-4) O resultado final deve ser igual ao código a seguir:
+4) O código resultante deverá ser igual ao código a seguir:
 
 ```xml
 <plugins>
@@ -150,7 +150,7 @@ Agora que você já tem sua aplicação devidamente criada, chegou a hora de adi
 
 ![gif animado demonstrando como executar o projeto que foi criando](/gifs/05-executando-o-servidor.gif)
 
-10) Revise tudo que foi feito até aqui!
+10) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
@@ -192,7 +192,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique com o botão direto em cima do package que acabamos de criar (*br.com.carstore.servlet*), selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **CreateCarServlet**
 
-7) Agora com sua primeira *servlet* devidamente criada, é necessário adicionar uma anotação *@WebServlet*. Essa anotação deverá ficar uma linha acima de onde o nome da classe **CreateCarServlet** esta declarado, depois adicione a extensão (extends) para a classe HttpServlet. O código resultante deverá ficar igual ao código a seguir:
+7) Agora com sua primeira *servlet* devidamente criada, é necessário adicionar uma anotação *@WebServlet*. Essa anotação deverá ficar uma linha acima de onde o nome da classe **CreateCarServlet** está declarado, depois adicione a extensão (extends) para a classe HttpServlet. O código resultante deverá ficar igual ao código a seguir:
 
 ```java
 package br.com.carstore.servlet;
@@ -297,7 +297,7 @@ A implementação do formulário deverá ser igual ao código a seguir:
 </html>
 ```
 
-11) Revise tudo que foi feito até aqui!
+11) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 

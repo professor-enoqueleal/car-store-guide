@@ -63,11 +63,11 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 ```
 
-4) Revise tudo que foi feito até aqui!
+4) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
-Você adicionu a dependência do H2 DB (Banco de dados em memória).
+Você adicionou a dependência do H2 DB (Banco de dados em memória).
 
 
 ## Tarefa 2: Registrando o listener do H2 DB no arquivo web.xml
@@ -143,28 +143,139 @@ CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
 
 ![gif animado demonstrando como criar_uma_tabela_no_h2_db](/gifs/11-criando-tabela-no-h2.gif)
 
-7) Revise tudo que foi feito até aqui!
+7) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
-Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web. Agora que você adicionou a dependência do H2 DB no arquivo pom.xml da sua aplicação, ao fazer o start (tomcat7:run), quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo.
+Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web. Agora que você adicionou a dependência do H2 DB no arquivo pom.xml da sua aplicação, ao fazer o start *(tomcat7:run)*, quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo.
 
 
 ## Tarefa 3: Criando a primeira Model e a primeira DAO
 
-Agora que você já tem um banco de dados devidamente configurado, chegou a hora de criar a primeira classe model (Car) e a primeira classe DAO (CarDao).
+Agora que temos tem um banco de dados devidamente configurado, chegou a hora de criar a primeira classe model (Car) e a primeira classe DAO (CarDao).
 
-1) Agora você deve criar dois novos pacotes (packages), o primeiro se chama *dao* e o segundo *model*. Para isso, navegue até o pacote principal pacote principal (br.com.carsoft). No seu projeto, navegue até o diretório: car-store-guide/app/src/main/java/br.com.carsoft, clique com o botão direito do mouse em cima do pacote principal (br.com.carsoft) e escolha a opção *New / Package* e insira o nome do primeiro pacote (dao). Repita a operação para criar o segundo pacote (dao).
+1) Agora vamos criar dois novos pacotes (packages), o primeiro se chama *dao* e o segundo *model*. Para isso, navegue até o pacote principal (br.com.carstore). No seu projeto, navegue até o diretório: car-store-guide/app/src/main/java/br.com.carstore, clique com o botão direito do mouse em cima do pacote principal (br.com.carstore) e escolha a opção *New / Package* e insira o nome do primeiro pacote (dao). Repita a operação para criar o segundo pacote (dao).
 
 No final da criação, o resultado esperado é que tenhamos agora três subpacotes dentro do pacote principal seguindo a hierarquia:
 
-car-store
-+- src/
-|  +- main/
-|  |  +- java/
-|  |    +- br.com.carstore/
-|  |  |  +- dao/
-|  |  |  +- model/
-|  |  |  +- servlet/
-|  |  +- webapp/
-|  |  |  +- index.html
+```
+car-store/
+|..| src/
+|  |..| main/
+|  |  |..| java/
+|  |  |  |..| br.com.carstore
+|  |  |  |  |..| dao
+|  |  |  |  |..| model
+|  |  |  |  |..| servlet
+|  |  |..| webapp/
+|  |  |  |..| WEB-INF/
+|  |  |  |  |..| web.xml
+|  |  |  |..| index.html
+```
+
+![imagem demonstrando a estrutura do projeto](/images/01-project-structure)
+
+2) Agora com os novos pacotes devidamente criados, vamos criar a nossa classe model chamada Car. Para isso, clique com o botão direito do mouse em cima do pacote model, escolha a opção *New, Java Class*, depois digite *Car* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **Car**.
+
+3) Com a classe Car devidamente criada, vamos criar um atribute para ela do tipo *String* com o modificador de acesso *privado* e com o nome de **name**.
+
+4) Crie os métodos acessores (getters and setters) para esse atributo que acabamos de criar *(private String name)*.
+
+O código resultante deverá ser igual ao código a seguir:
+
+```java
+package br.com.carstore.model;
+
+public class Car {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+}
+
+```
+
+5) Agora que já temos a classe Car devidamente criada, podemos criar nossa classe CarDao. Para isso, clique com o botão direito do mouse em cima do pacote dao, escolha a opção *New, Java Class*, depois digite *CarDao* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **CarDao**.
+
+6) Com a classe **CarDao** criada, vamos implementar um método chamado **createCar** que retorna **void** (não retorna nada) e que recebe por parâmetro um objeto do tipo Car.
+
+Nessa etapa, o código resultante deverá ser igual ao código a seguir:
+
+```java
+package br.com.carstore.dao;
+
+import br.com.carstore.model.Car;
+
+public class CarDao {
+
+    public void createCar(Car car) {
+
+    }
+
+}
+
+```
+
+7) Agora com o método *createCar* devidamente criado, vamos implementar a lógica de persistência dos valores do objeto car no nosso banco de dados. Nessa etapa, o código resultante deverá ser igual ao código a seguir:
+
+```java
+package br.com.carstore.dao;
+
+import br.com.carstore.model.Car;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class CarDao {
+
+    public void createCar(Car car) {
+
+        String SQL = "INSERT INTO CAR (NAME) VALUES (?)";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, car.getName());
+            preparedStatement.execute();
+
+            System.out.println("success in insert car");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+
+        }
+
+    }
+
+}
+```
+
+8) Atenção em toda a implementação e nos imports. Nessa etapa nenhum erro deve ser sinalizado pela sua IDE. Caso seu IDE sinalize algum erro, reveja todos os passos anteriores para garantir que esteja tudo correto.
+
+9) Com toda a implementação devidamente feita, já é possível testar o projeto para garantir que tudo está funcionando corretamente.
+
+![gif animado demonstrando o projeto funcionando e gravando dados no h2 db](/gifs/12-mostrando-o-projeto-funcionando.gif)
+
+10) Faça uma revisão tudo que foi feito até aqui!
+
+Parabéns! :+1:
+
+Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web, criou a primeira classe model e dao. Implementou a lógica para abrir uma conexão com o bando de dados (H2) e o comando de persistência (insert) dos dados no banco.
+
+Agora ao fazer o start *(tomcat7:run)*, quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo. Nesse momento a parte do create do nosso CRUD está implementada e funcionando.
