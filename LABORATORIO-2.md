@@ -1,14 +1,15 @@
-# Laboratório 2 - Adicionando uma camada de persitência na sua Java Web
+# Laboratório 2 — Adicionando uma camada de persistência na sua Java Web
 
 ## Visão geral e objetivos do laboratório
 
 Este laboratório apresenta os conceitos básicos para criar uma aplicação Java Web contendo uma camada de persitêcia de dados!
 
-Depois de concluir este laboratório, você deverá ser capaz de:
+Após concluir este laboratório, você deverá ser capaz de:
 
-- Provisionar uma camada de persitência para sua aplicação Java Web;
-- Subir um servidor Tomcat (Servlet Container) e um banco de dados em metória (H2 DB) embed para executar sua aplicação Java e persistir seus dados;
-- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet e gravar esses dados no banco de dados.
+- Provisionar uma camada de persistência para a aplicação Java Web;
+- Subir um servidor Tomcat (Servlet Container) e um banco de dados em memória (H2 DB) embed para executar sua aplicação Java e persistir seus dados;
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
+- Gravar os dados que foram capturados de um formulário HTML e persisti-los em um banco de dados (insert).
 
 ## Tarefa 1: Adicionar uma nova dependência ao seu projeto
 
@@ -28,7 +29,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 </dependency>
 ```
 
-3) O resultado final deve ser igual ao código a seguir:
+3) O código resultante deverá ser igual ao código a seguir:
 
 ```xml
 <dependencies>
@@ -268,7 +269,7 @@ public class CarDao {
 
 8) Atenção em toda a implementação e nos imports. Nessa etapa nenhum erro deve ser sinalizado pela sua IDE. Caso seu IDE sinalize algum erro, reveja todos os passos anteriores para garantir que esteja tudo correto.
 
-9) Com toda a implementação devidamente feita, já é possível testar o projeto para garantir que tudo está funcionando corretamente.
+9) Com toda a implementação devidamente feita, já é possível testar o projeto para garantir que tudo funciona corretamente.
 
 ![gif animado demonstrando o projeto funcionando e gravando dados no h2 db](/gifs/12-mostrando-o-projeto-funcionando.gif)
 
