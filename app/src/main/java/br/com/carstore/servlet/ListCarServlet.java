@@ -11,19 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/create-car")
-public class CreateCarServlet extends HttpServlet {
+@WebServlet("/find-all-cars")
+public class ListCarServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String carName = req.getParameter("car-name");
+        List<Car> cars = new CarDao().findAllCars();
 
-        Car car = new Car(carName);
+        req.setAttribute("cars", cars);
 
-        new CarDao().createCar(car);
-
-        resp.sendRedirect("/find-all-cars");
+        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
 
     }
 
