@@ -220,7 +220,7 @@ Perceba que agora estamos redirecionando o usuário para uma nóva página chama
 
 7) Agora vamos criar a página para exibir o resultado da nossa consulta em uma tabela (table) na nossa página HTML.
 
-Criei uma nova página chamada **dashboard.html** dentro da pasta **webapp**. Dentro dessa página crie uma tabela com duas colunas, uma coluna para a *propriedade* ID e a outra para a propriedade *Name*.
+Crie uma nova página chamada **dashboard.jsp** dentro da pasta **webapp**. Dentro dessa página crie uma tabela (table) com duas colunas, uma coluna para a *propriedade* ID e a outra para a propriedade *Name*.
 
 O código resultante deverá ser igual ao código a seguir:
 
