@@ -1,0 +1,259 @@
+Laboratório 1 — Criando uma Aplicação Web com Java
+
+Visão geral e objetivos do laboratório
+
+Este laboratório apresenta os conceitos básicos para criar uma aplicação Web utilizando Java.
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Criar uma aplicação Web com Java
+- Subir um servidor Tomcat (Servlet Container) Embed para executar sua aplicação Java Web
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet
+
+Tarefa 1 — Criar uma aplicação Java Web utilizando o Eclipse for Java EE Developer
+
+1) Garanta que você possui o Eclipse instalado no seu computador. Caso não tenha faça o download através do link a seguir: https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2023-03/R/eclipse-jee-2023-03-R-win32-x86_64.zip&mirror_id=576
+
+2) Abra o Eclipse
+
+3) Depois que o Eclipse estiver aberto, cliquei no menu: File / New / Maven Project.
+
+4) O assistente de novos projeto Maven será aberto. Clique no botão Next. 
+
+5) Nesta segunda etapa (Select an Archetype), localize o campo Filter e digite: maven-archetype-webapp
+
+No momento da criação de guia, o resultado do filtro tem como retorno 4 opções. Você deve selecionar a o resultado que tem a versão (Version) 1.4 e depois clicar no botão Next.
+
+6) Nesta etapa (Specify Archetype parameters) você deve preencher os campos, group id, artifact id, version e package utilizando as informações a seguir:
+
+GroupId: br.com.carstore
+ArtifactId: carstore
+Version: 0.0.1-SNAPSHOT
+Package: br.com.carstore
+
+Desmarque a opção: run archetype generation interactively
+
+Após o preenchimento, clique no botão finish.
+
+Depois disso basta aguardar toda a etapa de carregamento ser finalizada. No final sua aplicação estará pronta.
+
+OBS: O processo de carregamento pode demorar alguns minutos, é imprescindível aguardar toda a etapa de carregamento ser finalizada.
+
+7) Faça uma revisão tudo que foi feito até aqui!
+
+Parabéns!
+
+Agora temos uma nova aplicação Web criada utilizando Java e Maven, com base em um Archetype Web.
+
+---
+
+Tarefa 2 — Adicionar o plugin do Tomcat e do Maven War
+
+Agora que temos a aplicação devidamente criada, chegou a hora de adicionar o plugin do Tomcat (Servlet Container). Dessa forma será possível executar a aplicação Web no servidor Tomcat sem esforços adicionais.
+
+1) Com a aplicação criada, abra o arquivo pom.xml
+
+OBS: O arquivo pom.xml é o arquivo utilizando pelo Maven para o processo de construção (build) e empacotamento (package) de uma aplicação Java. Este arquivo é composto por diferentes seções.
+
+2) Localize o bloco plugins e remova todos os plugins que vinheram preenchidos de forma que o bloco plugins fique vazio.
+
+3) Dentro da seção plugins, adicione os plugins a seguir:
+
+```xml
+<!-- você deve selecionar o código a partir da linha abaixo -->
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId>
+  <version>2.1</version>
+  <configuration>
+    <path>/</path>
+  </configuration>
+  <executions>
+    <execution>
+      <id>tomcat-run</id>
+      <goals>
+        <goal>exec-war</goal>
+      </goals>
+      <phase>package</phase>
+      <configuration>
+          <enableNaming>false</enableNaming>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+<plugin>
+  <artifactId>maven-war-plugin</artifactId>
+  <version>3.2.2</version>
+  <configuration>
+      <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+      <warSourceDirectory>src/main/webapp</warSourceDirectory>
+  </configuration>
+</plugin>
+<!-- você deve selecionar o código até a linha a cima -->
+```
+
+4) Salve todas as alterações (CTRL + S). Depois navegue até a perspectiva Project Explorer e utilize o atalho (ALT + F5) e clique no botão OK. Com isso, o Maven irá identificar que dois novos plugins foram adicionados ao seu projeto e irá fazer o download dos mesmos de forma automática para você. Aguarde o carregamento finalizar.
+
+5) Feito isso, já é possível executar sua aplicação e renderizar sua primeira página web no browser. Para isso utilize o atalho (ALT + SHIFT + X), selecione a opção Run Maven Build. O assistente para execução do projeto será aberto. Localize o campo goals e digite tomcat7:run e clique no botão RUN.
+
+6) Após o processo de carregamento finalizar, abra o seu browser e digite o endereço: http://localhost:8080
+
+7) Uma página web deverá ser renderizada contendo a mensagem Hello World!
+
+8) Faça uma revisão tudo que foi feito até aqui!
+
+Parabéns!
+
+Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Adicionou o plugin do Tomcat Embed e o Plugin de Build do Maven. Com isso já é possível subir o servidor e renderizar a nossa primeira pagina web (Hello, world!).
+
+---
+
+Tarefa 3 — Criando sua primeira Servlet e fazendo uma requisição http
+
+Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web, chegou a hora de criar sua primeira Servlet e fazer sua primeira requisição http
+
+1) Abra novamente o arquivo arquivo pom.xml
+
+2) Localize o bloco </dependencies>. Você deverá adicionar duas dependências dentro do bloco </dependencies> no pom.xml da sua aplicação, conforme o código a seguir.
+
+OBS: Nenhum código deve ser removido nessa etapa. Apenas adicione o código a seguir dentro do bloco *<dependencies>*:
+
+```xml
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>provided</scope>
+</dependency>
+
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+```
+
+3) Salve todas as alterações (CTRL + S).
+
+4) Na view Console, selecione a opção Terminate. Isso fará o STOP do servidor.
+
+5) Salve todas as alterações (CTRL + S). Depois navegue até a perspectiva Project Explorer e utilize o atalho (ALT + F5) e clique no botão OK. Com isso, o Maven irá identificar que duas novas dependências foram adicionados ao seu projeto e irá fazer o download dos mesmos de forma automática para você. Aguarde o carregamento finalizar.
+
+6) Aguarde o carregamento finalizar.
+
+7) Após o carregamento das dependências finalizar, volte para a view Project Explorer, localize o projeto carstore, navegue no seu projeto clicando na pasta carstore, src e depois em main. Clique com o botão direto em cima da pasta main e escolha a opção New e depois Folder. No campo folder name digite Java e clique no botão finish.
+
+8) Após o pasta (folder) Java ter sido criado, vamos criar um pacote (package) para que possamos criar nossa primeira classe Java. Para isso utilize o atalho (CTRL + N) Selecione a opção package, clique no botão Next. No campo Name digite: br.com.carstore.servlet e clique no botão finish. Esse será o pacote padrão da nossa aplicação.
+
+6) Agora vamos criar nossa primeira (Servlet) classe Java. Clique no package que acabamos de criar (br.com.carstore.servlet), utilize novamente o atalho (CTRL + N) e selecione a opção class e clique no botão Next. No campo Name, digite CreateCarServlet e clique no botão Finish.
+
+
+## WIP
+
+7) Agora com sua primeira servlet devidamente criada, é necessário adicionar uma anotação @WebServlet. Essa anotação deverá ficar uma linha acima de onde o nome da classe CreateCarServlet está declarado, depois adicione a extensão (extends) para a classe HttpServlet. O código resultante deverá ficar igual ao código a seguir:
+
+```java
+package br.com.carstore.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+}
+```
+
+8) O Próximo passo é sobrescrever (Override) o método doPost(). O método doPost é o método que vai receber as requisições http feitas com o método POST. Para sobrescrever o método doPost, basta digitar doPost e depois usar as teclas de atalho (CTRL + barra de espaço) dentro da declaração da sua classe. O auto complete colocará uma sugestão, basta apertar a tecla enter que o método será sobrescrito. O código resultante deverá ficar igual ao código a seguir:
+
+```java
+package br.com.carstore.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        super.doPost(request, response);
+
+    }
+
+}
+```
+
+9) Após ter sobrescrito o método doPost, vamos implementar a chamada para o req.getParameter("car-name"). É dessa forma que pegamos as informações que serão enviadas através do formulário html. Dentro do método doPost(), apague a chamada ao método doPost() da classe mãe (Main class) e na sequência implemente o seguinte código:
+
+```java
+String carName = request.getParameter("car-name");
+
+System.out.println(carName);
+
+request.getRequestDispatcher("index.html").forward(request, response);
+```
+
+O código completo deverá ficar igual ao código a seguir:
+
+```java
+package br.com.carstore.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/create-car")
+public class CreateCarServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String carName = request.getParameter("car-name");
+
+        System.out.println(carName);
+
+        request.getRequestDispatcher("index.html").forward(request, response);
+
+    }
+
+}
+```
+
+10) O último passo será a implementação do formulário html. Esse formulário deverá conter três elementos. Um label contendo o nome do campo, um input para que o usuário possa escrever o valor no formato texto e um button para que o usuário possa clicar e submeter a requisição http para o servidor.
+
+No seu projeto, navegue até o diretório: car-store-guide/app/src/main/webapp/index.html
+
+A implementação do formulário deverá ser igual ao código a seguir:
+
+```html
+<html>
+<body>
+<h2>Create Car</h2>
+
+<form action="/create-car" method="post">
+
+    <label>Car Name</label>
+    <input type="text" name="car-name" id="car-name">
+
+    <button type="submit">Register</button>
+
+</form>
+
+</body>
+</html>
+```
+
+11) Faça uma revisão tudo que foi feito até aqui!
+
+Parabéns!
+
+Você criou uma nova aplicação Web utilizando Java, Maven e um Archetype Web. Adicionou o plugin do Tomcat Embed e o Plugin de Build do Maven. Criou sua primeira Servlet e sobrescreveu o método doPost, preparando ele para receber um atributo que você receberá no Java quando o seu formulário html for submetido. Depois você criou um formulário html contento um campo input text para que o usuário possa fazer a requisiçãp. Com isso já é possível subir o servidor e renderizar a nossa primeira página web, fazer a primeira requisição e recuperar o valor enviado na sua Java Servlet.
