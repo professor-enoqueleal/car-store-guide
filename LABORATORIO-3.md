@@ -1,4 +1,4 @@
-# Laboratório 3 — Criando o método para buscar os dados no Bando de Dados
+# Laboratório 3 — Criando o método para buscar os dados no Banco de Dados
 
 ## Visão geral e objetivos do laboratório
 
