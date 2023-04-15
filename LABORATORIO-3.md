@@ -98,7 +98,7 @@ public List<Car> findAllCars() {
 
 Esse comando fará uma busca no nosso banco de dados, na tabela CAR e retornará todos os registros existentes nessa tabela.
 
-4) O restande da implementação será bem similar a implementação do método **createCar**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
+4) O restante da implementação será bem similar a implementação do método **createCar**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
 
 O código resultante deverá ser igual ao código a seguir:
 
