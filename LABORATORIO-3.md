@@ -73,7 +73,7 @@ public class CreateCarServlet extends HttpServlet {
 }
 ```
 
-2) Agora vamos criar um novo método chamado **findAllCars** dentro da classe CarDao. Para isso, abra a classe CarDao.
+3) Agora vamos criar um novo método chamado **findAllCars** dentro da classe CarDao. Para isso, abra a classe CarDao.
 
 Crie o método **findAllCars** que devolve uma lista do tipo **Car**. O código resultante deverá ser igual ao código a seguir:
 
@@ -84,7 +84,7 @@ public List<Car> findAllCars() {
 ```
 Nesse momento o seu IDE vai esta alertando erro porque o retorno (return) ainda não foi implementado. Não se preocupe porque isso será resolvido no passo a seguir.
 
-3) Agora vamos implementar a lógica que faz a busca dos dados no banco de dados. O primeiro passo é criar nossa string SQL contento o comando SQL para a busca (SELECT * FROM).
+4) Agora vamos implementar a lógica que faz a busca dos dados no banco de dados. O primeiro passo é criar nossa string SQL contento o comando SQL para a busca (SELECT * FROM).
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -98,7 +98,7 @@ public List<Car> findAllCars() {
 
 Esse comando fará uma busca no nosso banco de dados, na tabela CAR e retornará todos os registros existentes nessa tabela.
 
-4) O restante da implementação será bem similar a implementação do método **createCar**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
+5) O restante da implementação será bem similar a implementação do método **createCar**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -146,7 +146,7 @@ O código resultante deverá ser igual ao código a seguir:
     }
 ```
 
-5) Agora que já implementamos o método findAllCar que retorna uma lista com todos os carros que foram cadastrados na nossa tabela Car, podemos seguir com a criação da nossa Servlet responsável por receber as requisições de consulta.
+6) Agora que já implementamos o método findAllCar que retorna uma lista com todos os carros que foram cadastrados na nossa tabela Car, podemos seguir com a criação da nossa Servlet responsável por receber as requisições de consulta.
 
 No pacote servlet, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **ListCarServlet**.
 
@@ -181,7 +181,7 @@ public class ListCarServlet extends HttpServlet {
 }
 ```
 
-6) Agora com a classe **ListCarServlet** criada e o método doGet sobrescrito, podemos implementar a lógica que chamará a classe CarDao e o médoto **findAllCars()**.
+7) Agora com a classe **ListCarServlet** criada e o método doGet sobrescrito, podemos implementar a lógica que chamará a classe CarDao e o médoto **findAllCars()**.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -218,7 +218,7 @@ public class ListCarServlet extends HttpServlet {
 
 Perceba que agora estamos redirecionando o usuário para uma nóva página chamada dashboard.jsp. Essa página ainda não existe e vamos cria-la no passo a seguir.
 
-7) Agora vamos criar a página para exibir o resultado da nossa consulta em uma tabela (table) na nossa página HTML.
+8) Agora vamos criar a página para exibir o resultado da nossa consulta em uma tabela (table) na nossa página HTML.
 
 Crie uma nova página chamada **dashboard.jsp** dentro da pasta **webapp**. Dentro dessa página crie uma tabela (table) com duas colunas, uma coluna para a *propriedade* ID e a outra para a propriedade *Name*.
 
@@ -249,7 +249,7 @@ O código resultante deverá ser igual ao código a seguir:
 </html>
 ```
 
-8) Agora vamos adicionar o import da taglib do **JSTL** (The JavaServer Pages Standard Tag Library). É através dessa tag library que nós poderemos fazer o uso de IF ou FOR dentro da nossa página.
+9) Agora vamos adicionar o import da taglib do **JSTL** (The JavaServer Pages Standard Tag Library). É através dessa tag library que nós poderemos fazer o uso de IF ou FOR dentro da nossa página.
 
 Após adicionar o import da tag library e o laço for, o código resultante deverá ser igual ao código a seguir:
 
@@ -281,7 +281,7 @@ Após adicionar o import da tag library e o laço for, o código resultante deve
 </html>
 ```
 
-9) O ultimo passo é redirecionar o usuário para a nova página a pós a criação (insert) de um novo carro no nosso banco de dados. Para isso, na classe **CreateCarServlet**, troque a linha que contém o código:
+10) O ultimo passo é redirecionar o usuário para a nova página a pós a criação (insert) de um novo carro no nosso banco de dados. Para isso, na classe **CreateCarServlet**, troque a linha que contém o código:
 
 ```java
  req.getRequestDispatcher("index.html").forward(req, resp);
@@ -294,7 +294,7 @@ resp.sendRedirect("/find-all-cars");
 
 Feito isso, após a criação de um novo carro, a requisição será redirecionada para a nossa nova servlet **ListCarServlet** que executará o método **doPost()**, fará a consulta no banco de dados e no final irá redirecionar o usuário para a página dashboard.jsp onde os cadastraados no banco de dados serão renderizados no browser.
 
-9) Faça uma revisão tudo que foi feito até aqui!
+11) Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
