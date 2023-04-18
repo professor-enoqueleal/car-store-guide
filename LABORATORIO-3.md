@@ -304,4 +304,4 @@ Voltar para: [LABORATÓRIO 2](./LABORATORIO-2.md)
 
 *ou*
 
-Ir para: LABORATÓRIO 4
+Ir para: [LABORATÓRIO 4](./LABORATORIO-4.md)
