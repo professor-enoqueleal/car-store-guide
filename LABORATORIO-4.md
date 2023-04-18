@@ -9,7 +9,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 - Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
 - Deletar dados que foram persistido no banco de dados (delete car where id = ?).
 
-## Tarefa 1: Criando o método findAllCar()
+## Tarefa 1: Criando o método deleteCarById()
 
 Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web. Já consegue gravar e consultar os dados no banco de dados, chegou a hora de implementar a operação que consiste em deletar / remover dados que foram persistidos no banco de dados da sua aplicação.
 
@@ -46,7 +46,7 @@ O código resultante deverá ser igual ao código a seguir:
 ```java
 public void deleteCarById(String carId) {
 
-    String SQL = "DELETE CAR WHERE ID = " + carId;
+    String SQL = "DELETE CAR WHERE ID = ?";
 
     try {
 
@@ -55,9 +55,10 @@ public void deleteCarById(String carId) {
         System.out.println("success in database connection");
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+        preparedStatement.setString(1, carId);
         preparedStatement.execute();
 
-        System.out.println("success in delete car with id: " + carId);
+        System.out.println("success on delete car with id: " + carId);
 
         connection.close();
 
@@ -268,7 +269,7 @@ o código resultante deverá ser igual ao código a seguir:
 </table>
 ```
 
-![imagem mostrando o botão delete sendo renderizado no formilário de listagem](/images/02-formulário-com-o-botao.png)
+![imagem mostrando o botão delete sendo renderizado no formulário de listagem](/images/02-formulario-com-o-botao.png)
 
 
 3) Faça uma revisão tudo que foi feito até aqui!
