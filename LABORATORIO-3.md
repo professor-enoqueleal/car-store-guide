@@ -98,7 +98,7 @@ public List<Car> findAllCars() {
 
 Esse comando fará uma busca no nosso banco de dados, na tabela CAR e retornará todos os registros existentes nessa tabela.
 
-5) O restante da implementação será bem similar a implementação do método **createCar**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
+5) O restante da implementação será bem similar a implementação do método **createCar()**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -298,7 +298,7 @@ Feito isso, após a criação de um novo carro, a requisição será redireciona
 
 Parabéns! :+1:
 
-Você criou a segunda parte do no CRUD (read). Implementou o médoto findAllCar e agora os dados já são consultados no banco de daados e exibidos em nosso novo formulário HTML. 
+Você criou a segunda parte do no CRUD (read). Implementou o médoto findAllCar e agora os dados já são consultados no banco de dados e exibidos em nosso novo formulário HTML. 
 
 Voltar para: [LABORATÓRIO 2](./LABORATORIO-2.md)
 
