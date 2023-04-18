@@ -13,7 +13,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web e já consegue gravar e consultar os dados no banco de dados, chegou a hora de implementar a operação que consiste em deletar / remover dados que foram persistidos no banco de dados da sua aplicação.
 
-1) Para isso, vamos criar um novo método chamado **deleteCarById()**. Esse método deverá ser criado dentro da classe **CarDao**.
+1 - Para isso, vamos criar um novo método chamado **deleteCarById()**. Esse método deverá ser criado dentro da classe **CarDao**.
 
 OBS: A classe **CarDao** já existe e possui dois métodos, sendo eles **createCar()** e **findAllCars**. Nesta seção nós vamos apenas criar /adicionar um novo método dentro dessa classe. O nome do método deve ser **deleteCarById()**. Este méotodo receberá uma String como parâmetro e o seu retorno será do tipo *void*.
 
@@ -26,7 +26,7 @@ public void deleteCarById(String carId) {
 }
 ```
 
-2) Agora vamos implementar a lógica que faz a remocão / delete do dado no banco de dados. O primeiro passo é criar uma variável do tipo string que chamaremos de SQL. Essa variável recebe como valor uma string contento o comando SQL para fazer o delete (DELETE CAR WHERE ID = ?).
+2 - Agora vamos implementar a lógica que faz a remocão / delete do dado no banco de dados. O primeiro passo é criar uma variável do tipo string que chamaremos de SQL. Essa variável recebe como valor uma string contento o comando SQL para fazer o delete (DELETE CAR WHERE ID = ?).
 
 ```java
 public void deleteCarById(String carId) {
@@ -39,7 +39,7 @@ public void deleteCarById(String carId) {
 OBS: Esse comando fará a remoção do dado armazenado na nossa tabela de acordo com o ID informado. 
 
 
-3) O restante da implementação do método será bem similar a implementação que fizemos anteriormente no método **createCar()**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
+3 - O restante da implementação do método será bem similar a implementação que fizemos anteriormente no método **createCar()**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -73,7 +73,7 @@ public void deleteCarById(String carId) {
 
 OBS: Não se preocupe com repetição de código nesse momento. Nos próximos laboratórios nós faremos uma refatoração para remover código repetido *(Boilerplate)*.
 
-4) Agora que já implementamos o método **deleteCarById()** que recebe um ID por parâmetro e executa a lógica para a remoção do registro de um carro em nossa tabela, já podemos seguir com a criação da *Servlet* que ficará responsável por receber as requisições de *delete*.
+4 - Agora que já implementamos o método **deleteCarById()** que recebe um ID por parâmetro e executa a lógica para a remoção do registro de um carro em nossa tabela, já podemos seguir com a criação da *Servlet* que ficará responsável por receber as requisições de *delete*.
 
 No pacote br.com.carstore.servlet, selecione a opção *New* e depois a opção *Java Class*. No assistente de criação, digite o nome da classe: **DeleteCarServlet**.
 
@@ -119,7 +119,7 @@ Após executar a chamada para a classe **carDao** e no método **deleteCarById**
 
 Para que o comando de *remoção / delete* funcione corretamente, nós precisamos que o ID do carro cadastrado seja retornado no momento da consulta. Para isso teremos que fazer uma refatoração no nosso código.
 
-1) O primeiro passo é refatorar a classe *model* **Car**, adicionando uma nova variável do tipo *String* chamada *id* e um novo construtor sobrecarregado que recebe o *ID* e o *Name* por parametrô. Abra a classe Car que esta localizada dentro do pacote *br.com.carstore.model*, crie uma nova variável privada / private do tipo String chamada ID e crie o seu respectivo método *(getter)* getId(). Na sequência, crie um construtor que recebe *id* e *name* como parâmetro.
+1 - O primeiro passo é refatorar a classe *model* **Car**, adicionando uma nova variável do tipo *String* chamada *id* e um novo construtor sobrecarregado que recebe o *ID* e o *Name* por parametrô. Abra a classe Car que esta localizada dentro do pacote *br.com.carstore.model*, crie uma nova variável privada / private do tipo String chamada ID e crie o seu respectivo método *(getter)* getId(). Na sequência, crie um construtor que recebe *id* e *name* como parâmetro.
 
 OBS: Nenhum código deve ser removido nesta etapa. Apenas adicione uma nova variável e o construtor sobrecarregado.
 
@@ -155,7 +155,7 @@ public class Car {
 
 ```
 
-2) Agora será necessário refatorar o método **findAllCars()** que foi criado no Laboratório 3, para que ao varrer *(while)* o *resultSet*, ele pegue duas propriedades sendo elas *id* e *name*.
+2 - Agora será necessário refatorar o método **findAllCars()** que foi criado no Laboratório 3, para que ao varrer *(while)* o *resultSet*, ele pegue duas propriedades sendo elas *id* e *name*.
 
 O código existente é o seguinte:
 
@@ -191,7 +191,7 @@ while (resultSet.next()) {
 
 ```
 
-3) Agora será necessário refatorar o formulário html (dashboard.jsp) para exibir o ID no momento da consulta. Abra a página **dashboard.jsp** e adicione a variável *${car.id}*
+3 - Agora será necessário refatorar o formulário html (dashboard.jsp) para exibir o ID no momento da consulta. Abra a página **dashboard.jsp** e adicione a variável *${car.id}*
 
 O código existente é o seguinte:
 
@@ -217,11 +217,11 @@ Após a refatoração, o código resultante deverá ser igual ao código a segui
 
 ```
 
-4) Faça uma revisão tudo que foi feito até aqui!
+4 - Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
-5) Garanta que tudo até aqui esteja funcionando adequadamente. Salve tudo (CTRL + S) e faça um teste em sua aplicação *tomcat7:run*, faça o cadastro de um carro e veja se o ID agora é exibido quando a página *dashboard.jsp* é renderizada conforme imagem a seguir:
+5 - Garanta que tudo até aqui esteja funcionando adequadamente. Salve tudo (CTRL + S) e faça um teste em sua aplicação *tomcat7:run*, faça o cadastro de um carro e veja se o ID agora é exibido quando a página *dashboard.jsp* é renderizada conforme imagem a seguir:
 
 ![gif animado demonstrando o id do carro sendo exibido na tabela](/gifs/13-exibindo-o-campo-id.gif)
 
@@ -229,7 +229,7 @@ Parabéns! :+1:
 
 Agora que o ID do carro é exibido na página, chegou a hora de implementar a lógica para remoção do carro no formulário html *dashboard.jsp*.
 
-1) Para isso, abra novamente a página *dashboard.jsp*. Dentro da tabela (table), adicione mais uma coluna (th). A label será *Actions*.
+1 - Para isso, abra novamente a página *dashboard.jsp*. Dentro da tabela (table), adicione mais uma coluna (th). A label será *Actions*.
 
 ```html
 <table>
@@ -247,7 +247,7 @@ Agora que o ID do carro é exibido na página, chegou a hora de implementar a l�
 </table>
 ```
 
-2) O valor que será preenchido será um formulário (form) que ao ser submetido, fará uma requisição HTTP para a nossa nova servlet **DeleteCarServlet** passando o ID do veículo como parametrô.
+2 - O valor que será preenchido será um formulário (form) que ao ser submetido, fará uma requisição HTTP para a nossa nova servlet **DeleteCarServlet** passando o ID do veículo como parametrô.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -275,7 +275,7 @@ O código resultante deverá ser igual ao código a seguir:
 
 ![imagem mostrando o botão delete sendo renderizado no formulário de listagem](/images/02-formulario-com-o-botao.png)
 
-3) Faça uma revisão tudo que foi feito até aqui!
+3 - Faça uma revisão tudo que foi feito até aqui!
 
 ![gif animado demonstrando a remoção funcionando](/gifs/14-delete-funcionando.gif)
 
