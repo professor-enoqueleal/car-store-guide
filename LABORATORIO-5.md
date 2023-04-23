@@ -39,7 +39,7 @@ public void updateCar(Car car) {
 OBS: Esse comando fará a atualização do dado armazenado na nossa tabela de acordo com o ID informado, e atualizando os campos informados atravé do comando **SET**. Esse exemplo é extremamente simples. Muita atenção quando você for replicar essa função no seu projeto. 
 
 
-3 - O restante da implementação do método será bem similar a implementação que fizemos anteriormente no método **createCar()**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem sucedida ou não.
+3 - O restante da implementação do método será bem similar a implementação que fizemos anteriormente no método **createCar()**. Teremos o bloco *try / catch* e também as mensagens de feedback para que possamos saber se a operação foi bem-sucedida ou não.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -77,11 +77,11 @@ public void updateCar(Car car) {
 
 OBS: Não se preocupe com repetição de código nesse momento. Nos próximos laboratórios nós faremos uma refatoração para remover código repetido *(Boilerplate)*.
 
-4 - Agora que já implementamos o método **updateCar()** que recebe um objeto do tipo *Car* por parâmetro e executa a lógica para a atualizção do registro de um carro em nossa tabela, já podemos seguir com a refatoração da *Servlet* que ficará responsável por receber as requisições de *update*.
+4 - Agora que já implementamos o método **updateCar()** que recebe um objeto do tipo *Car* por parâmetro e executa a lógica para a atualização do registro de um carro em nossa tabela, já podemos seguir com a refatoração da *Servlet* que ficará responsável por receber as requisições de *update*. 
 
 No pacote br.com.carstore.servlet, procure pela *Servlet* chamada **CreateCarServlet**.
 
-Essa Servlet já existe e receberá algumas alterações. Agora ao receber uma requisição no método *doPost()*, além de coletar o parametrô *car-name*, nós vamos coletar também o *ID* e armazenalo em uma variável do tipo String chamada *carId*.
+Essa Servlet já existe e receberá algumas alterações. Agora ao receber uma requisição no método *doPost()*, além de coletar o parâmetro *car-name*, nós vamos coletar também o *ID* e armazená-lo em uma variável do tipo String chamada *carId*.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -118,7 +118,7 @@ public class CreateCarServlet extends HttpServlet {
 
 ```
 
-5 - Agora precisamos validar se o valor da variável *carId* é vazio. Se for vazio (não contém um ID) significa que trata-se de uma requisição de cadastro. E se o valor da variável *carId* não for um valor vazio (contém um ID) significa que trata-se de uma requisição de atualização. Para a construção dessa lógica nós utilizaremos o método *isBlank()* da classe String que foi introduzido na versão 11 do Java.
+5 - Agora precisamos validar se o valor da variável *carId* é vazio. Se for vazio (não contém um ID) significa que se trata de uma requisição de cadastro. E se o valor da variável *carId* não for um valor vazio (contém um ID) significa que se trata de uma requisição de atualização. Para a construção dessa lógica nós utilizaremos o método *isBlank()* da classe String que foi introduzido na versão 11 do Java. 
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -202,12 +202,12 @@ O código resultante deverá ser igual ao código a seguir:
 </table>
 ```
 
-OBS: Repare que o *anchor* irá fazer um *hyperlink* com a página *index.jsp*. Essa operação esta enviando alguns parametrôs como a variável *car.id* e *car.name*. Isso é necessário para que possamos acessar esses valores na página *index.jsp* conforme será demonstrado a seguir. 
+OBS: Repare que o *anchor* irá fazer um *hyperlink* com a página *index.jsp*. Essa operação está enviando alguns parametrôs como a variável *car.id* e *car.name*. Isso é necessário para que possamos acessar esses valores na página *index.jsp* conforme será demonstrado a seguir.
 
 2 - Agora precisamos refatorar a página index.html
 
-A primeira ação é modificar sua extensão de .html para .jsp. Isso é necessário para que possamos acessar os valores que foram enviados por parametro na requisição feita através de *hyperlink* da página *dashboard.jsp* para a página *index.jsp*.
- 
+A primeira ação é modificar sua extensão de .html para .jsp. Isso é necessário para que possamos acessar os valores que foram enviados por parâmetro na requisição feita através de *hyperlink* da página *dashboard.jsp* para a página *index.jsp*. 
+
 No IntelliJ, navegue até a página index.html que fica no diretório: car-store-guide/app/src/main/webapp. Clique com o botão direito do mouse em cima do arquivo index.html, selecione a opção *refactor / rename*, troque a extensão de *.html* para *.jsp*.
 
 ![gif animado demonstrando como trocar a extensão da página](/gifs/15-trocando-a-extensao.gif)
@@ -230,7 +230,7 @@ Troce a palavra *Register* por *Save*.
 
 Parabéns! :+1:
 
-Você criou a quarta parte do CRUD (update). Implementou o médoto *updateCar()* e agora os dados já são atualizados no banco de dados. 
+Você criou a quarta parte do CRUD (update). Implementou o método *updateCar()* e agora os dados já são atualizados no banco de dados. 
 
 Voltar para: [LABORATÓRIO 4](./LABORATORIO-4.md)
 
