@@ -287,4 +287,4 @@ Voltar para: [LABORATÓRIO 3](./LABORATORIO-3.md)
 
 *ou*
 
-Ir para: LABORATÓRIO 5
+Ir para: [LABORATÓRIO 5](./LABORATORIO-5.md)
