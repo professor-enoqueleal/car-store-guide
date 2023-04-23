@@ -12,12 +12,18 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Image</th>
             <th>Actions</th>
         </tr>
         <c:forEach var="car" items="${cars}">
             <tr>
                 <td>${car.id}</td>
                 <td>${car.name}</td>
+                <td>
+                    <a href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}/${car.image}">
+                        <img style="width: 100px" src="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}/${car.image}" alt="...">
+                    </a>
+                </td>
                 <td>
                     <form action="/delete-car" method="post">
                         <input type="hidden" id="id" name="id" value="${car.id}">

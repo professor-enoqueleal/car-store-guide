@@ -2,12 +2,18 @@
 <body>
 <h2>Create Car</h2>
 
-<form action="/create-car" method="post">
+<form action="/create-car" method="post" enctype="multipart/form-data">
 
-    <label>Car Name</label>
-    <input type="text" name="car-name" id="car-name">
+    <div>
+        <label for="car-name" >Car Name</label>
+        <input type="text" name="car-name" id="car-name">
+    </div>
+    <div>
+        <label for="file">Choose file</label>
+        <input type="file" name="file" id="file">
+    </div>
 
-    <button type="submit">Register</button>
+    <button type="submit">Save</button>
 
 </form>
 

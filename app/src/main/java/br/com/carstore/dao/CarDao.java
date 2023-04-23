@@ -14,7 +14,7 @@ public class CarDao {
 
     public void createCar(Car car) {
 
-        String SQL = "INSERT INTO CAR (NAME) VALUES (?)";
+        String SQL = "INSERT INTO CAR (NAME, IMAGE) VALUES (?, ?)";
 
         try {
 
@@ -25,6 +25,7 @@ public class CarDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, car.getName());
+            preparedStatement.setString(2, car.getImage());
             preparedStatement.execute();
 
             System.out.println("success in insert car");
@@ -58,8 +59,9 @@ public class CarDao {
 
                 String carId = resultSet.getString("id");
                 String carName = resultSet.getString("name");
+                String carImage = resultSet.getString("image");
 
-                Car car = new Car(carId, carName);
+                Car car = new Car(carId, carName, carImage);
 
                 cars.add(car);
 
