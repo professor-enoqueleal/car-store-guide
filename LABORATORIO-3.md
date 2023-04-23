@@ -296,6 +296,8 @@ Feito isso, após a criação de um novo carro, a requisição será redireciona
 
 11) Faça uma revisão tudo que foi feito até aqui!
 
+---
+
 Parabéns! :+1:
 
 Você criou a segunda parte do no CRUD (read). Implementou o médoto findAllCar e agora os dados já são consultados no banco de dados e exibidos em nosso novo formulário HTML. 

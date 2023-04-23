@@ -275,6 +275,8 @@ public class CarDao {
 
 10) Faça uma revisão tudo que foi feito até aqui!
 
+---
+
 Parabéns! :+1:
 
 Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua aplicação Java Web, criou a primeira classe model e dao. Implementou a lógica para abrir uma conexão com o bando de dados (H2) e o comando de persistência (insert) dos dados no banco.

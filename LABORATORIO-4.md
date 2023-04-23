@@ -279,6 +279,8 @@ O código resultante deverá ser igual ao código a seguir:
 
 ![gif animado demonstrando a remoção funcionando](/gifs/14-delete-funcionando.gif)
 
+---
+
 Parabéns! :+1:
 
 Você criou a terceira parte do CRUD (delete). Implementou o médoto *deleteCarById()* e agora os dados já são deletados no banco de dados. 
