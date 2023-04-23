@@ -22,6 +22,8 @@
                     <form action="/delete-car" method="post">
                         <input type="hidden" id="id" name="id" value="${car.id}">
                         <button type="submit">Delete</button>
+                        <span> | </span>
+                        <a href="index.jsp?id=${car.id}&name=${car.name}">Update</a>
                     </form>
                 </td>
             </tr>
