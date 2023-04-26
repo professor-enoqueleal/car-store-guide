@@ -215,11 +215,11 @@ No IntelliJ, navegue até a página **index.html** que fica no diretório: car-s
 
 ![gif animado demonstrando como trocar a extensão da página](/gifs/15-trocando-a-extensao.gif)
 
-3 - Refatorando a página *index.html*
+3 - Refatorando a página *index.jsp*
 
-Agora, com a extensão .jsp, podemos fazer a refatoração necessária na página index para que nossa operação de update / atualização possa funcionar corretamente.
+Agora que a página index contém a extensão *.jsp*, podemos fazer a refatoração necessária na página para que nossa operação de *update / atualização* possa funcionar corretamente.
 
-Com a página index.jsp aberta, iremos adicionar um novo campo input do tipo *hidden* (escondido) para armazenar o variável ID *${param.id}* e adicionar a propriedade value no campo input para armazenar a variável ${param.name}.
+Com a página *index.jsp* aberta, iremos adicionar um novo campo *input* do tipo *hidden* (escondido) para armazenar o variável ID ${param.id} e adicionar a propriedade value no campo input para armazenar a variável ${param.name}.
 
 Após a refatoração, o código resultante deverá ser igual ao código a seguir:
 
