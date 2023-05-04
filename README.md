@@ -37,5 +37,32 @@ Após concluir este laboratório, você deverá ser capaz de:
 ### Laboratório 3 — Criando o método para buscar os dados no Banco de Dados
 - [LABORATÓRIO 3](./LABORATORIO-3.md)
 
+Este laboratório apresenta as ações básicas criar uma camada de consulta na camada de persitêcia de dados!
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
+- Consultar os dados que foram persistido no banco de dados (select * from car) e exibir os dados em um formulário HTML.
+
+
 ### Laboratório 4 — Criando o método para deletar dados no Banco de Dados
 - [LABORATÓRIO 4](./LABORATORIO-4.md)
+
+Este laboratório tem como objetivo apresentar uma forma básica sobre como deletar dados em uma tabela no banco de dados!
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
+- Deletar / remover dados que foram persistidos no banco de dados (delete car where id = ?).
+
+
+### Laboratório 5 — Criando o método para atualizar dados no Banco de Dados
+- [LABORATÓRIO 5](./LABORATORIO-5.md)
+
+Este laboratório tem como objetivo apresentar uma forma básica sobre como atualizar dados em uma tabela no banco de dados!
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
+- Atualizar dados que foram persistidos no banco de dados (update ... where id = ?).
+
