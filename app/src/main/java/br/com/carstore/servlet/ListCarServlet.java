@@ -17,11 +17,21 @@ public class ListCarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Car> cars = new CarDao().findAllCars();
+        if (null == req.getSession().getAttribute("username")) {
 
-        req.setAttribute("cars", cars);
+            req.setAttribute("message", "Invalid credentials!");
 
-        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+
+        } else {
+
+            List<Car> cars = new CarDao().findAllCars();
+
+            req.setAttribute("cars", cars);
+
+            req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+
+        }
 
     }
 

@@ -7,6 +7,10 @@
 </head>
 <body>
   <div>
+
+    <span>${sessionScope.username}</span>
+    <a href="/logout">Logout</a>
+
     <h1>Cars</h1>
     <table>
         <tr>
