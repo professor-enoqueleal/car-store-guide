@@ -66,3 +66,12 @@ Após concluir este laboratório, você deverá ser capaz de:
 - Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
 - Atualizar dados que foram persistidos no banco de dados (update ... where id = ?).
 
+### Laboratório 6 — Configurando o pool de conexões
+- [LABORATÓRIO 6](./LABORATORIO-6.md)
+
+Este laboratório tem como objetivo apresentar uma forma básica sobre como configurar um pool de conexões para gerenciar as conexões com o banco de dados!
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Implementar um pool de conexões utilizando a biblioteca [Apache Commons DBCP](https://github.com/apache/commons-dbcp);
+
