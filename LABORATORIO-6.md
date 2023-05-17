@@ -255,11 +255,18 @@ Dessa forma nós iremos economizar recursos computacionais e como consequência 
 Dentro de cada método mencionado acima, localize a linha que abre a conexão e faça a substituição:
 
 REMOVA:
+  
+```java
 Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+  
 System.out.println("success in database connection");
-
+```
+  
 ADICIONE: 
+
+```java
 Connection connection = ConnectionPoolConfig.getConnection();
+```
 
 Agora, os métodos não irão abrir mais conexões diretamente e portando não escreverá a mensagem ("success in database connection") porque a abertura de novas conexões agora é responsabilidade da nossa classe **BasicDataSource**.
 
