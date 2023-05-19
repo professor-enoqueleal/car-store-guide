@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 
         if (isValidUser) {
 
-            req.getSession().setAttribute("username", username);
+            req.getSession().setAttribute("loggedUser", username);
 
             resp.sendRedirect("find-all-cars");
 
