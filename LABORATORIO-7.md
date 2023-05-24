@@ -1,4 +1,4 @@
-# Laboratório 6 — Criando a a funcionalidade de login
+# Laboratório 7 — Criando a a funcionalidade de login
 
 ## Visão geral e objetivos do laboratório
 
