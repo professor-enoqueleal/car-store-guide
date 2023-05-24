@@ -21,20 +21,20 @@ Uma das características do sistema **Car Store** é sua área administrativa qu
 
 2 - Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
 
-    * Driver Class: *org.h2.Driver*
-    * JDBC URL: *jdbc:h2:~/test*
-    * User Name: *sa*
-    * Password: *sa*
+   * Driver Class: *org.h2.Driver*
+   * JDBC URL: *jdbc:h2:~/test*
+   * User Name: *sa*
+   * Password: *sa*
 
 3 - Após efetuar o login, você poderá criar sua segunda tabela. Você deverá criar uma tabela chamada **USER**. Para isso utilize o comando **SQL** a seguir:
 
-```roomsql
+```sql
 CREATE TABLE USR (ID INT PRIMARY KEY AUTO_INCREMENT, USERNAME VARCHAR(255), PASSWORD VARCHAR(255));
 ```
 
 4 - Depois que a tabela foi criada, vamos fazer a criação do nosso primeiro usuário de forma manual. Para isso, utilize o seguinte comando SQL:
 
-```roomsql
+```sql
 INSERT INTO USR (USERNAME, PASSWORD) VALUES ('your-user', 'your-password')
 ```
 
@@ -107,7 +107,7 @@ public class UserDao {
 
 O script será o seguinte: 
 
-```roomsql
+```sql
 SELECT * FROM USR WHERE USERNAME = ?
 ```
 
