@@ -516,11 +516,13 @@ Altere o mapeamento da anotação @WebServlet:
 
 5 - Salve todas as alterações **(CTRL + S)** e execute sua aplicação (tomcat7:run).
 
-Acesse sua aplicação através do link http://localhost:8080 e faça o cadastro de um carro. Repare que a página que é exibida não é mais a página de cadastro e sim a página de login.
+Acesse sua aplicação através do link http://localhost:8080 e faça o cadastro de um carro. Repare que a página que é exibida não é mais a página de cadastro e sim a página de login. Esse e o comportamento esperado, porque a página padrão agora é a página **login.jsp**. Para acessar a página **dashboard.jsp** as cre devem ser informadas. 
 
-Esse e o comportamento esperado, porque a página padrão agora é a página **login.jsp**. para acessar a página **dashboard.jsp** as cre deve 
+OBS: Atenção nesse ponto, pois você deve digitar as mesmas credenciais (username e password) que você incluiu no banco (INSERT) no paço 4. Caso contrário você irá receber um feedback de usuário ou senha inválidos.
 
-o comportamento da aplicação não mudou, porém a mensagem ("New connection pool created with successful") só é escrita uma vez no stdout. Esse é o compartamento esperado porque agora a nossa aplicação reaproveita as conexões que já foram abertas e estão disponíveis sempre que possível e tudo isso é gerenciado pelo nosso pool de conexões.
+Após digitar as credenciais corretamente você será redirecionado para a página dashboard.jsp.
+
+Caso você não queira informar as credenciais, você pode acessar diretamente a página dashboard.jso através da URL: http://localhost:8080/find-all-cars. A página será renderizada corretamente, porém os botões de **delete** e **update** não devem aparecer.
 
 ---
 
