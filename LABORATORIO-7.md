@@ -19,20 +19,20 @@ Uma das características do sistema **Car Store** é sua área administrativa qu
 
 1 - Criar uma nova tabela usuário. Com a aplicação em execução *(tomcat7:run)* navegue até a console de gerênciamento do *H2 DB* através do link: *http://localhost:8080/console*
 
-2) Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
+2 - Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
 
     * Driver Class: *org.h2.Driver*
     * JDBC URL: *jdbc:h2:~/test*
     * User Name: *sa*
     * Password: *sa*
 
-3) Após efetuar o login, você poderá criar sua segunda tabela. Você deverá criar uma tabela chamada **USER**. Para isso utilize o comando **SQL** a seguir:
+3 - Após efetuar o login, você poderá criar sua segunda tabela. Você deverá criar uma tabela chamada **USER**. Para isso utilize o comando **SQL** a seguir:
 
 ```roomsql
 CREATE TABLE USR (ID INT PRIMARY KEY AUTO_INCREMENT, USERNAME VARCHAR(255), PASSWORD VARCHAR(255));
 ```
 
-4) Depois que a tabela foi criada, vamos fazer a criação do nosso primeiro usuário de forma manual. Para isso, utilize o seguinte comando SQL:
+4 - Depois que a tabela foi criada, vamos fazer a criação do nosso primeiro usuário de forma manual. Para isso, utilize o seguinte comando SQL:
 
 ```roomsql
 INSERT INTO USR (USERNAME, PASSWORD) VALUES ('your-user', 'your-password')
@@ -41,6 +41,7 @@ INSERT INTO USR (USERNAME, PASSWORD) VALUES ('your-user', 'your-password')
 5 - Faça uma revisão tudo que foi feito até aqui, para garantir que a tabela foi criada e que o cadastro (INSERT) do primeiro usuário funcionou corretamente.
 
 ---
+
 ## Tarefa 2: Criando as classes Model e DAO responsáveis por recuperar as credenciais de login
 
 1 - O primeiro paço é criar a classe User. Para isso, No IntelliJ o pacote *(package)* model que fica no diretório: car-store-guide/app/src/main/java/br.com.carstore.model, clique com o botão direito do mouse e selecione a opção New / Java Class e digite o nome **User** e pressione a tecla **ENTER**. 
@@ -170,6 +171,7 @@ public class UserDao {
 
 ```
 ---
+
 ## Tarefa 3: Criando a Servlet responsável por capturar as credenciais de login
 
 1 - Agora com a tabela **USR** criada no banco de dados e a classe DAO devidamente criada, podemos implementar a classe Servlet que receberá as requisições HTTP com as informações de login (username e password).
@@ -251,6 +253,7 @@ public class LoginServlet extends HttpServlet {
 
 ```
 ---
+
 ## Tarefa 4: Criando a Servlet responsável pela operação de logout
 
 1 - Com a servlet de login pronta, devemos criar uma servlet responsável pelo processo de logout (sair). Ela receberá requisições na rota ("/logout").
@@ -354,6 +357,7 @@ Esse comportamento é dado porque a apenas área administrativa do sistema é pr
 5 - Faça uma revisão tudo que foi feito até aqui!
 
 ---
+
 ## Tarefa 6: Criando a página HTML responsável por capturar as credenciais de login
 
 1 - Com a DAO, Servlet e Filter de login devidamente criadas, chegou o momento de criar a página (jsp) de login.
@@ -395,6 +399,7 @@ Com o arquivo login.jso Criado, cole o conteúdo abaixo:
 Essa é uma página simples que contém um formulário (form), dois campos **input**, onde será informado o usuário e a senha (username e password) e um botão (button) que faz a submissão da requisição para o **path** /login.
 
 ---
+
 ## Tarefa 7: Refatorando a página dashboard.jsp
 
 Se todas as orientações foram executadas com sucesso, toda a implementação de login foi realizada com sucesso. Agora precisamos refatorar a nossa **dashboard.jsp** e a servlet **ListCarServlet**.
@@ -507,9 +512,9 @@ PARA
 @WebServlet({"/find-all-cars", "/admin/find-all-cars"})
 ```
 
-5 - Faça uma revisão tudo que foi feito até aqui garantido assim que todas as etapas foram executadas.
+4 - Faça uma revisão tudo que foi feito até aqui garantido assim que todas as etapas foram executadas.
 
-6 - Salve todas as alterações **(CTRL + S)** e execute sua aplicação (tomcat7:run).
+5 - Salve todas as alterações **(CTRL + S)** e execute sua aplicação (tomcat7:run).
 
 Acesse sua aplicação através do link http://localhost:8080 e faça o cadastro de um carro. Repare que a página que é exibida não é mais a página de cadastro e sim a página de login.
 
