@@ -502,13 +502,13 @@ Para isso, No IntelliJ, navegue até o package servlet que fica no diretório ca
 
 Altere o mapeamento da anotação @WebServlet:
 
-DE
-```java```
+**DE**
+```java
 @WebServlet("/find-all-cars")
 ```
 
-PARA
-```java```
+**PARA**
+```java
 @WebServlet({"/find-all-cars", "/admin/find-all-cars"})
 ```
 
@@ -521,6 +521,7 @@ Acesse sua aplicação através do link http://localhost:8080 e faça o cadastro
 Esse e o comportamento esperado, porque a página padrão agora é a página **login.jsp**. para acessar a página **dashboard.jsp** as cre deve 
 
 o comportamento da aplicação não mudou, porém a mensagem ("New connection pool created with successful") só é escrita uma vez no stdout. Esse é o compartamento esperado porque agora a nossa aplicação reaproveita as conexões que já foram abertas e estão disponíveis sempre que possível e tudo isso é gerenciado pelo nosso pool de conexões.
+
 ---
 
 Parabéns! :+1:
