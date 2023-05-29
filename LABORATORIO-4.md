@@ -285,8 +285,4 @@ Parabéns! :+1:
 
 Você criou a terceira parte do CRUD (delete). Implementou o médoto *deleteCarById()* e agora os dados já são deletados no banco de dados. 
 
-Voltar para: [LABORATÓRIO 3](./LABORATORIO-3.md)
-
-*ou*
-
-Ir para: [LABORATÓRIO 5](./LABORATORIO-5.md)
+Voltar para [LABORATÓRIO 3](./LABORATORIO-3.md) *ou* ir para [LABORATÓRIO 5](./LABORATORIO-5.md)

@@ -302,8 +302,4 @@ Parabéns! :+1:
 
 Você criou a segunda parte do no CRUD (read). Implementou o médoto findAllCar e agora os dados já são consultados no banco de dados e exibidos em nosso novo formulário HTML. 
 
-Voltar para: [LABORATÓRIO 2](./LABORATORIO-2.md)
-
-*ou*
-
-Ir para: [LABORATÓRIO 4](./LABORATORIO-4.md)
+Voltar para: [LABORATÓRIO 2](./LABORATORIO-2.md) *ou* ir para: [LABORATÓRIO 4](./LABORATORIO-4.md)

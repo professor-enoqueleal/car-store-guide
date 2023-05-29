@@ -15,9 +15,9 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 Agora que você já tem sua aplicação devidamente criada, já conseguiu subir seu servidor web, chegou a hora de adicionar uma camada de persistência de dados na sua aplicação. 
 
-1) Abra o arquivo arquivo **pom.xml**
+1 - Abra o arquivo arquivo **pom.xml**
 
-2) Localize o bloco **dependencies**. Você deverá adicionar uma nova dependência dentro deste bloco.
+2 - Localize o bloco **dependencies**. Você deverá adicionar uma nova dependência dentro deste bloco.
 
 **OBS**: Nenhuma dependência deve ser removida nesse processo. Adicione a dependência a seguir dentro do bloco **dependencies**: 
 
@@ -29,7 +29,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 </dependency>
 ```
 
-3) O código resultante deverá ser igual ao código a seguir:
+3 - O código resultante deverá ser igual ao código a seguir:
 
 ```xml
 <dependencies>
@@ -64,7 +64,7 @@ Agora que você já tem sua aplicação devidamente criada, já conseguiu subir 
 
 ```
 
-4) Faça uma revisão tudo que foi feito até aqui!
+4 - Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
@@ -75,9 +75,9 @@ Você adicionou a dependência do H2 DB (Banco de dados em memória).
 
 :warning: Para saber mais sobre o H2 DB, visite a documentação oficial através desse link: [H2 Database Engine](https://www.h2database.com)
 
-1) Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o *listener* do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
+1 - Agora que a dependência do H2 foi adicionada ao projeto, será necessário registrar o *listener* do H2 no arquivo web.xml. Para isso navegue até o arquivo web.xml. Este arquivo fica localizado no diretório: car-store/src/main/webapp/WEB-INF/web.xml
 
-2) Com o arquivo web.xml aberto, adicione o *listener* dentro do bloco *web-app* conforme código a seguir:
+2 - Com o arquivo web.xml aberto, adicione o *listener* dentro do bloco *web-app* conforme código a seguir:
 
 ```xml
 <listener>
@@ -98,7 +98,7 @@ Você adicionou a dependência do H2 DB (Banco de dados em memória).
 
 **OBS**: Nenhuma configuração deverá ser removida nesse processo.
 
-3) O resultado final deverá ser igual ao código a seguir:
+3 - O resultado final deverá ser igual ao código a seguir:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,16 +127,16 @@ Você adicionou a dependência do H2 DB (Banco de dados em memória).
 </web-app>
 ```
 
-4) Salve todas as alterações **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. Com o *listener* do **H2 DB** devidamente registrado, é possível acessar a console de gerênciamento através do link: *http://localhost:8080/console*
+4 - Salve todas as alterações **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. Com o *listener* do **H2 DB** devidamente registrado, é possível acessar a console de gerênciamento através do link: *http://localhost:8080/console*
 
-5) Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
+5 - Após acessar a console do **H2 DB**, faça o login utilizando as informações a seguir:
 
     * Driver Class: *org.h2.Driver*
     * JDBC URL: *jdbc:h2:~/test*
     * User Name: *sa*
     * Password: *sa*
 
-6) Após efetuar o login, você poderá criar sua primeira tabela. Você deverá criar uma tabela chamada **CAR**. Para isso utilize o comando **SQL** a seguir:
+6 - Após efetuar o login, você poderá criar sua primeira tabela. Você deverá criar uma tabela chamada **CAR**. Para isso utilize o comando **SQL** a seguir:
 
 ```sql
 CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
@@ -144,7 +144,7 @@ CREATE TABLE CAR(ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(255));
 
 ![gif animado demonstrando como criar_uma_tabela_no_h2_db](/gifs/11-criando-tabela-no-h2.gif)
 
-7) Faça uma revisão tudo que foi feito até aqui!
+7 - Faça uma revisão tudo que foi feito até aqui!
 
 Parabéns! :+1:
 
@@ -155,7 +155,7 @@ Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua a
 
 Agora que temos tem um banco de dados devidamente configurado, chegou a hora de criar a primeira classe model (Car) e a primeira classe DAO (CarDao).
 
-1) Agora vamos criar dois novos pacotes (packages), o primeiro se chama *dao* e o segundo *model*. Para isso, navegue até o pacote principal (br.com.carstore). No seu projeto, navegue até o diretório: car-store-guide/app/src/main/java/br.com.carstore, clique com o botão direito do mouse em cima do pacote principal (br.com.carstore) e escolha a opção *New / Package* e insira o nome do primeiro pacote (dao). Repita a operação para criar o segundo pacote (dao).
+1 - Agora vamos criar dois novos pacotes (packages), o primeiro se chama *dao* e o segundo *model*. Para isso, navegue até o pacote principal (br.com.carstore). No seu projeto, navegue até o diretório: car-store-guide/app/src/main/java/br.com.carstore, clique com o botão direito do mouse em cima do pacote principal (br.com.carstore) e escolha a opção *New / Package* e insira o nome do primeiro pacote (dao). Repita a operação para criar o segundo pacote (dao).
 
 No final da criação, o resultado esperado é que tenhamos agora três subpacotes dentro do pacote principal seguindo a hierarquia:
 
@@ -176,11 +176,11 @@ car-store/
 
 ![imagem demonstrando a estrutura do projeto](/images/01-project-structure.png)
 
-2) Agora com os novos pacotes devidamente criados, vamos criar a nossa classe model chamada Car. Para isso, clique com o botão direito do mouse em cima do pacote model, escolha a opção *New, Java Class*, depois digite *Car* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **Car**.
+2 - Agora com os novos pacotes devidamente criados, vamos criar a nossa classe model chamada Car. Para isso, clique com o botão direito do mouse em cima do pacote model, escolha a opção *New, Java Class*, depois digite *Car* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **Car**.
 
-3) Com a classe Car devidamente criada, vamos criar um atribute para ela do tipo *String* com o modificador de acesso *privado* e com o nome de **name**.
+3 - Com a classe Car devidamente criada, vamos criar um atribute para ela do tipo *String* com o modificador de acesso *privado* e com o nome de **name**.
 
-4) Crie os métodos acessores (getters and setters) para esse atributo que acabamos de criar *(private String name)*.
+4 - Crie os métodos acessores (getters and setters) para esse atributo que acabamos de criar *(private String name)*.
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -203,9 +203,9 @@ public class Car {
 
 ```
 
-5) Agora que já temos a classe Car devidamente criada, podemos criar nossa classe CarDao. Para isso, clique com o botão direito do mouse em cima do pacote dao, escolha a opção *New, Java Class*, depois digite *CarDao* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **CarDao**.
+5 - Agora que já temos a classe Car devidamente criada, podemos criar nossa classe CarDao. Para isso, clique com o botão direito do mouse em cima do pacote dao, escolha a opção *New, Java Class*, depois digite *CarDao* e aperte a tecla ENTER. O assistente de criação do IntelliJ irá criar uma nova classe Java chamada **CarDao**.
 
-6) Com a classe **CarDao** criada, vamos implementar um método chamado **createCar** que retorna **void** (não retorna nada) e que recebe por parâmetro um objeto do tipo Car.
+6 - Com a classe **CarDao** criada, vamos implementar um método chamado **createCar** que retorna **void** (não retorna nada) e que recebe por parâmetro um objeto do tipo Car.
 
 Nessa etapa, o código resultante deverá ser igual ao código a seguir:
 
@@ -224,7 +224,7 @@ public class CarDao {
 
 ```
 
-7) Agora com o método *createCar* devidamente criado, vamos implementar a lógica de persistência dos valores do objeto car no nosso banco de dados. Nessa etapa, o código resultante deverá ser igual ao código a seguir:
+7 - Agora com o método *createCar* devidamente criado, vamos implementar a lógica de persistência dos valores do objeto car no nosso banco de dados. Nessa etapa, o código resultante deverá ser igual ao código a seguir:
 
 ```java
 package br.com.carstore.dao;
@@ -267,13 +267,13 @@ public class CarDao {
 }
 ```
 
-8) Atenção em toda a implementação e nos imports. Nessa etapa nenhum erro deve ser sinalizado pela sua IDE. Caso seu IDE sinalize algum erro, reveja todos os passos anteriores para garantir que esteja tudo correto.
+8 - Atenção em toda a implementação e nos imports. Nessa etapa nenhum erro deve ser sinalizado pela sua IDE. Caso seu IDE sinalize algum erro, reveja todos os passos anteriores para garantir que esteja tudo correto.
 
-9) Com toda a implementação devidamente feita, já é possível testar o projeto para garantir que tudo funciona corretamente.
+9 - Com toda a implementação devidamente feita, já é possível testar o projeto para garantir que tudo funciona corretamente.
 
 ![gif animado demonstrando o projeto funcionando e gravando dados no h2 db](/gifs/12-mostrando-o-projeto-funcionando.gif)
 
-10) Faça uma revisão tudo que foi feito até aqui!
+10 - Faça uma revisão tudo que foi feito até aqui!
 
 ---
 
@@ -283,8 +283,4 @@ Você adicionou a dependência de um banco de dados em memória (H2 DB) na sua a
 
 Agora ao fazer o start *(tomcat7:run)*, quando a aplicação é iniciada temos um banco de dados relacional a nossa disposição e temos também uma console para gerenciamento do mesmo. Nesse momento a parte do create do nosso CRUD está implementada e funcionando.
 
-Voltar para: [LABORATÓRIO 1](./LABORATORIO-1.md)
-
-*ou*
-
-Ir para: [LABORATÓRIO 3](./LABORATORIO-3.md)
+Voltar para [LABORATÓRIO 1](./LABORATORIO-1.md) *ou* ir para [LABORATÓRIO 3](./LABORATORIO-3.md)

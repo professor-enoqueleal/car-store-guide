@@ -263,8 +263,4 @@ Parabéns! :+1:
 
 Você criou a quarta parte do CRUD (update). Implementou o método *updateCar()* e agora os dados já são atualizados no banco de dados. 
 
-Voltar para: [LABORATÓRIO 4](./LABORATORIO-4.md)
-
-*ou*
-
-Ir para: LABORATÓRIO 6
+Voltar para [LABORATÓRIO 4](./LABORATORIO-4.md) *ou* ir para [LABORATÓRIO 6](./LABORATORIO-6.md)

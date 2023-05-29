@@ -12,7 +12,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 ## Tarefa 1: Adicionando a dependência do Apache Commons DBCP
 
-1: Adicionando a dependência
+1 - Adicionando a dependência
 
 No IntelliJ IDEA, abra o arquivo de configuração do projeto chamado "pom.xml" (geralmente localizado na raiz do projeto).
 
@@ -30,14 +30,14 @@ Localize a seção <dependencies> e adicione a seguinte dependência:
 ```
 OBS: Nenhum código deve ser removido nesta etapa. Apenas adicione a nova dependência no *pom.xml*.
 
-2: Salve todas as alterações **(CTRL + S)**
+2 - Salve todas as alterações **(CTRL + S)**
 
 OBS: Após salvar as alterações, o IntelliJ IDEA deve sincronizar automaticamente as alterações do arquivo de configuração e baixar a biblioteca Apache Commons DBCP.
 
 
 ## Tarefa 2: Criando a classe para o Pool de Conexões
 
-1: Crie uma classe de configuração para o pool de conexões
+1 - Crie uma classe de configuração para o pool de conexões
 
 No IntelliJ IDEA, navegue até o pacote principal *br.com.carstore.servlet*, clique com o botão direto do mouse e selecione *New / Package* digite **config** e pressione a tecla ENTER.
 
@@ -45,7 +45,7 @@ Após ter criado o pacote *config*, clique com o botão direito do mouse no paco
 
 Defina o nome da classe como "ConnectionPoolConfig" e clique em "OK".
 
-2: Abra a classe que acabamos de criar e implemente um método estático (static) chamado *getDataSource* que não recebe nenhum parâmetro e retorna um **BasicDataSource** conforme código a seguir:
+2 - Abra a classe que acabamos de criar e implemente um método estático (static) chamado *getDataSource* que não recebe nenhum parâmetro e retorna um **BasicDataSource** conforme código a seguir:
 
 ```java
 
@@ -64,7 +64,7 @@ public class ConnectionPoolConfig {
 
 OBS: Não esqueça de importar (import) a classe BasicDataSource do pacote *org.apache.commons.dbcp2*. Para realizar o importe utilizando o IntelliJ, clique com o botão direito do mouse em cima do nome da classe e utilize o atalho **(ALT + ENTER)** e selecione a opção **import class**.
 
-3: Agora que já temos nossa classe **BasicDataSource** e nosso método **getDataSource()** devidamente criados, vamos iniciar nossa implementacão. A primeira parte consiste em uma validação condicional que verifica se a variável *dataSource* é nula (null).
+3 - Agora que já temos nossa classe **BasicDataSource** e nosso método **getDataSource()** devidamente criados, vamos iniciar nossa implementacão. A primeira parte consiste em uma validação condicional que verifica se a variável *dataSource* é nula (null).
 
 O código resultante deverá ser igual ao código a seguir:
 
@@ -94,7 +94,7 @@ public class ConnectionPoolConfig {
 
 Se o resultado dessa validação condicional for verdadeiro, nós iremos criar um novo *dataSource* (será demonstrado na próxima seção). Caso o retorno seja falso, significa que já existe um dataSource criado e portando nós iremos retornar ele, sem executar nenhuma ação adicional. 
 
-4: Assumindo que o retorno da validação condicional foi verdadeiro (true), nós precisamos criar um novo dataSource. para isso nós iremos criar uma nova instância de **BasicDataSource** e passar alguns parâmetros sendo eles:
+4 - Assumindo que o retorno da validação condicional foi verdadeiro (true), nós precisamos criar um novo dataSource. para isso nós iremos criar uma nova instância de **BasicDataSource** e passar alguns parâmetros sendo eles:
 
 * URL
 * Username
@@ -152,7 +152,7 @@ public class ConnectionPoolConfig {
 
 ```
 
-5: Criando o método getConnection
+5 - Criando o método getConnection
 
 Agora que já temos o método getDataSource devidamente implementado, precisamos criar o método que devolve as requisições para os usuários.
 
@@ -168,7 +168,7 @@ public static Connection getConnection() throws SQLException {
 }
 ```
 
-6: Criando um construtor privado
+6 - Criando um construtor privado
 
 Agora que já temos o método getDataSource() e getConnection() devidamente criados, precisamos criar um construtor privado que chama o método getDataSource para iniciar um novo pool de conexões assim que nossa classe for chamada pela primeira vez.
 
@@ -231,13 +231,13 @@ Salve todas as alterações **(CTRL + S)**
 
 ## Tarefa 3: Refatorando (refactor) a classe DAO para usar o pool de conexões
 
-1: Agora que já temos nosso pool de conexões devidamente criado e configurado, chegou a hora de refatorar a classe **CarDAO** para que ela passe a utilizar as conexões fornecidas através do nosso pool de conexões.
+1 - Agora que já temos nosso pool de conexões devidamente criado e configurado, chegou a hora de refatorar a classe **CarDAO** para que ela passe a utilizar as conexões fornecidas através do nosso pool de conexões.
 
 Para isso, no IntelliJ IDEA, navegue até o pacote *br.com.carstore.dao* e com dois cliques rápidos (double click) abra a **CarDAO**.
 
 Com a classe CarDAO aberta podemos iniciar nossa refatoração.
 
-2: A classe CarDAO possui diversos métodos, sendo eles:
+2 - A classe CarDAO possui diversos métodos, sendo eles:
 
 * createCar()
 * findAllCars()
@@ -272,9 +272,9 @@ Agora, os métodos não irão abrir mais conexões diretamente e portando não e
 
 Estamos aqui implementando o **S** do [SOLID](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/).
 
-3: Faça uma revisão tudo que foi feito até aqui!
+3 - Faça uma revisão tudo que foi feito até aqui!
 
-4: Salve todas as alterações **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. 
+4 - Salve todas as alterações **(CTRL + S)** e execute sua aplicação *(tomcat7:run)*. 
 
 Acesse sua aplicação através do link http://localhost:8080 e faça o cadastro de um carro. Repare que o comportamento da aplicação não mudou, porém a mensagem ("New connection pool created with successful") só é escrita uma vez no *stdout*. Esse é o compartamento esperado porque agora a nossa aplicação reaproveita as conexões que já foram abertas e estão disponíveis sempre que possível e tudo isso é gerenciado pelo nosso pool de conexões.
 
@@ -284,8 +284,4 @@ Parabéns! :+1:
 
 Você adicionou um pool de conexões na sua aplicação utilizando a biblioteca **Apache Commons DBCP** e agora sua aplicação gerencia as conexões com o banco de dados de forma eficiente. 
 
-Voltar para: [LABORATÓRIO 5](./LABORATORIO-5.md)
-
-*ou*
-
-Ir para: [LABORATÓRIO 7](./LABORATORIO-7.md)
+Voltar para [LABORATÓRIO 5](./LABORATORIO-5.md) *ou* ir para: [LABORATÓRIO 7](./LABORATORIO-7.md)
