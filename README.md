@@ -75,3 +75,16 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 - Implementar um pool de conexões utilizando a biblioteca [Apache Commons DBCP](https://github.com/apache/commons-dbcp);
 
+### Laboratório 7 — Criando a a funcionalidade de login
+- [LABORATÓRIO 7](./LABORATORIO-7.md)
+
+Este laboratório tem como objetivo apresentar uma forma básica sobre como implementar uma funcionalidade de login utilizando usuário e senha.
+
+Após concluir este laboratório, você deverá ser capaz de:
+
+- Fazer requisições http através de um formulário HTML e capturar os dados dessa requisição em uma Servlet;
+- Criar uma tabela no banco de dados para armazenar as credencias de login (username e password);
+- Criar uma classe DAO (Data Access Object) para verificação das credencias de login;
+- Implementar um formulário HTML para capturar as credenciais de login;
+- Implementar um Filter para verificar se o usuário esta logado a cada requisição;
+
