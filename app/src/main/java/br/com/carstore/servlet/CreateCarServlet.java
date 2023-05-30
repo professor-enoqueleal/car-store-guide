@@ -15,6 +15,8 @@ public class CreateCarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
+        req.setCharacterEncoding("UTF-8");
+
         String carId = req.getParameter("id");
         String carName = req.getParameter("car-name");
 
