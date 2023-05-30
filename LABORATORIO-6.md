@@ -284,4 +284,4 @@ Parabéns! :+1:
 
 Você adicionou um pool de conexões na sua aplicação utilizando a biblioteca **Apache Commons DBCP** e agora sua aplicação gerencia as conexões com o banco de dados de forma eficiente. 
 
-Voltar para [LABORATÓRIO 5](./LABORATORIO-5.md) *ou* ir para: [LABORATÓRIO 7](./LABORATORIO-7.md)
+Voltar para [LABORATÓRIO 5](./LABORATORIO-5.md) *ou* ir para [LABORATÓRIO 7](./LABORATORIO-7.md)

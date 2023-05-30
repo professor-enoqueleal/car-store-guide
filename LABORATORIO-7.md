@@ -528,4 +528,4 @@ Parabéns! :+1:
 
 Você implementou a funcionalidade de login e as requisições para a área protegida ("/admin") são filtradas verificando se os utilizadores estão autenticados.
 
-Voltar para [LABORATÓRIO 6](./LABORATORIO-6.md) *ou* ir para: LABORATÓRIO 8
+Voltar para [LABORATÓRIO 6](./LABORATORIO-6.md) *ou* ir para LABORATÓRIO 8
