@@ -1,4 +1,4 @@
-# Laboratório 8 — Implementando upload de imagem
+# Laboratório 8 — Implementando upload de imagem [WIP]
 
 ## Visão geral e objetivos do laboratório
 
