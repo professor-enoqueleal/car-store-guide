@@ -282,9 +282,110 @@ Após salvar as alterações, o IntelliJ IDEA deve sincronizar automaticamente a
 
 ## Tarefa 4: Alterando a servlet CreateCarServlet e implementando o método uploadImage()
 
+Após adicionar a dependência no nosso projeto, podemos seguir com a implementação necessária. Três novos métodos serão criados agora, sendo eles, **uploadImage()**, **checkFieldType()** e **processUploadedFile()**. Cada um desses métodos tem sua responsabilidade bem definida e vamos falar sobre elas a seguir.
+
+1 - Vamos abrir nossa classe CreateCarServlet e refatora-la. Para isso, no IntelliJ navegue até o pacote *(package)* **servlet** que fica no diretório: car-store-guide/app/src/main/java/br.com.carstore.servlet e abra a classe **CreateCarServlet.java**.
+
+Com a classe devidamente aberta, vamos criar o método **uploadImage** que recebe por parâmetro uma instância de HttpServletRequest e devolve um Map de String. Esse método será responsável varrer toda a lista de parâmetros que recebemos do formulário HTML, chamar o método **checkFieldType**. Esse método será responsável por verificar se o conteúdo recebido do formulário HTML é um arquivo (**File**) ou apenas um texto simples (FormField). Se for um texto simples, pegaremos o nome do campo e o valor e adicionaremos no mapa de parâmetros. Se for um arquivo, o terceiro método **processUploadedFile** é chamado para realizar o upload do arquivo e armazenar o arquivo no diretório especificado.
+
+O código resultante da implementação deverá ser igual ao código a seguir:
+
 ```java
+private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
+
+    Map<String, String> requestParameters = new HashMap<>();
+
+    if (isMultipartContent(httpServletRequest)) {
+
+        try {
+
+            DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+
+            List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
+
+            for (FileItem fileItem : fileItems) {
+
+                checkFieldType(fileItem, requestParameters);
+
+            }
+
+        } catch (Exception ex) {
+
+            requestParameters.put("image", "img/default-car.jpg");
+
+        }
+
+    }
+
+    return requestParameters;
+
+}
 
 ```
+
+2 - Criando o método **checkFieldType**. A implementação desse método consiste em uma validação condicional responsável por verificar se o campo é do tipo file ou não. Se for file o método **processUploadedFile** é chamado. Se não for, apenas pegamos o valor do campo e adicionamos no map parameters.
+
+O código resultante da implementação deverá ser igual ao código a seguir:
+
+```java
+
+private void checkFieldType(FileItem item, Map requestParameters) throws Exception {
+
+    if (item.isFormField()) {
+
+        requestParameters.put(item.getFieldName(), item.getString());
+
+    } else {
+
+        String fileName = processUploadedFile(item);
+        requestParameters.put("image", "img/".concat(fileName));
+
+    }
+
+}
+
+```
+
+3 - Criando o método **processUploadedFile()**. Esse método receberá por parâmetro uma instância de um objeto do tipo FileItem que contém um campo do tipo file. Com isso, criamos o nome do arquivo com base em um *timestemp*, removemos qualquer espaço em branco que exista no nome do arquivo e por último gravamos o arquivo em uma pasta chamada IMG dentro do nosso servidor.
+
+O código resultante da implementação deverá ser igual ao código a seguir:
+
+```java
+
+private String processUploadedFile(FileItem fileItem) throws Exception {
+    Long currentTime = new Date().getTime();
+    String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
+    String filePath = this.getServletContext().getRealPath("img").concat(File.separator).concat(fileName);
+    fileItem.write(new File(filePath));
+    return fileName;
+}
+
+```
+
+4 - Agora que toda a implementação de upload foi feita, nós precisamos refatorar o método **doPost** para pegar os parametros do Mao que é devolvido pelo méotodo uploadImage ao invés de pegar do HttpServletRequest.
+
+O código resultante da implementação deverá ser igual ao código a seguir:
+
+```java
+    @Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+    Map<String, String> parameters = uploadImage(req);
+    
+    String carImagePath = parameters.get("image");
+    String carName = parameters.get("car-name");
+    
+    Car car = new Car("0", carName, carImagePath);
+    
+    new CarDao().createCar(car);
+    
+    resp.sendRedirect("/find-all-cars");
+
+}
+```
+
+5 - Salve todas as alterações **(CTRL + S)** e faça uma revisão de tudo que foi feito até aqui!
+
 --
 
 ## Tarefa 5: Alterando a página index.jsp
@@ -293,7 +394,7 @@ Agora precisamos alterar o nosso formulário index.jsp adicionando um novo input
 
 1 - Localize o formulário **index.jsp**. Para isso, no IntelliJ navegue até a pasta **webapp** que fica no diretório: car-store-guide/app/src/main/java/webapp e abra o arquivo index.jsp.
 
-2 - Com o arquivo devidamente aberto, vamos adicionar um novo inout dentro do nosso formulário:
+2 - Com o arquivo devidamente aberto, vamos adicionar um novo campo *input* do tipo *file* dentro do nosso formulário:
 
 ```html
 <label for="image">Choose file</label>
