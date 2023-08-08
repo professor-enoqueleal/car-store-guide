@@ -11,7 +11,7 @@ Os laboratórios serão organizados por numeros e devem ser executado de forma s
 Os laboratórios disponíveis até o momento são: 
 
 ### Laboratório 1 — Criando uma Aplicação Web com Java
-- [LABORATÓRIO 1](./LABORATORIO-1.md)
+- ~~LABORATÓRIO 1~~
 
 Este laboratório apresenta os conceitos básicos para criar uma aplicação Web utilizando Java.
 
@@ -23,7 +23,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 
 ### Laboratório 2 — Adicionando uma camada de persistência na sua Java Web
-- [LABORATÓRIO 2](./LABORATORIO-2.md)
+- ~~LABORATÓRIO 2~~
 
 Este laboratório apresenta os conceitos básicos para criar uma aplicação Java Web contendo uma camada de persitêcia de dados!
 
@@ -35,7 +35,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 - Gravar os dados que foram capturados de um formulário HTML e persisti-los em um banco de dados (insert).
 
 ### Laboratório 3 — Criando o método para buscar os dados no Banco de Dados
-- [LABORATÓRIO 3](./LABORATORIO-3.md)
+- ~~LABORATÓRIO 3~~
 
 Este laboratório apresenta as ações básicas criar uma camada de consulta na camada de persitêcia de dados!
 
@@ -46,7 +46,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 
 ### Laboratório 4 — Criando o método para deletar dados no Banco de Dados
-- [LABORATÓRIO 4](./LABORATORIO-4.md)
+- ~~LABORATÓRIO 4~~
 
 Este laboratório tem como objetivo apresentar uma forma básica sobre como deletar dados em uma tabela no banco de dados!
 
@@ -57,7 +57,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 
 
 ### Laboratório 5 — Criando o método para atualizar dados no Banco de Dados
-- [LABORATÓRIO 5](./LABORATORIO-5.md)
+- ~~LABORATÓRIO 5~~
 
 Este laboratório tem como objetivo apresentar uma forma básica sobre como atualizar dados em uma tabela no banco de dados!
 
@@ -67,7 +67,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 - Atualizar dados que foram persistidos no banco de dados (update ... where id = ?).
 
 ### Laboratório 6 — Configurando o pool de conexões
-- [LABORATÓRIO 6](./LABORATORIO-6.md)
+- ~~LABORATÓRIO 6~~
 
 Este laboratório tem como objetivo apresentar uma forma básica sobre como configurar um pool de conexões para gerenciar as conexões com o banco de dados!
 
@@ -76,7 +76,7 @@ Após concluir este laboratório, você deverá ser capaz de:
 - Implementar um pool de conexões utilizando a biblioteca [Apache Commons DBCP](https://github.com/apache/commons-dbcp);
 
 ### Laboratório 7 — Criando a a funcionalidade de login
-- [LABORATÓRIO 7](./LABORATORIO-7.md)
+- ~~LABORATÓRIO 7~~
 
 Este laboratório tem como objetivo apresentar uma forma básica sobre como implementar uma funcionalidade de login utilizando usuário e senha.
 
