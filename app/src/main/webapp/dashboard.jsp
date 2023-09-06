@@ -2,17 +2,19 @@
 <html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
-    <meta charset="UTF-8">
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html" charset=UTF-8>
+    <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <title>Dashboard</title>
 </head>
 <body>
-  <div>
+  <div class="container">
    <c:if test="${sessionScope.loggedUser != null}">
         <span>${sessionScope.loggedUser}</span>
         <a href="/logout">Logout</a>
     </c:if>
     <h1>Cars</h1>
-    <table>
+    <table class="table">
         <tr>
             <th>ID</th>
             <th>Name</th>
