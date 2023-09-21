@@ -31,9 +31,10 @@ public class CreateCarServlet extends HttpServlet {
 
         String carId = parameters.get("id");
         String carName = parameters.get("car-name");
+        String image = parameters.get("image");
 
         CarDao carDao = new CarDao();
-        Car car = new Car(carId, carName);
+        Car car = new Car(carId, carName, image);
 
         if (carId.isBlank()) {
 
@@ -81,7 +82,7 @@ public class CreateCarServlet extends HttpServlet {
     }
 
 
-    private void checkFieldType(FileItem item, Map requestParameters) throws Exception {
+    private void checkFieldType(FileItem item, Map<String, String> requestParameters) throws Exception {
 
         if (item.isFormField()) {
 
@@ -96,14 +97,12 @@ public class CreateCarServlet extends HttpServlet {
 
     }
 
-
     private String processUploadedFile(FileItem fileItem) throws Exception {
-        Long currentTime = new Date().getTime();
-        String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
+        long currentTime = new Date().getTime();
+        String fileName = Long.toString(currentTime).concat("-").concat(fileItem.getName().replace(" ", ""));
         String filePath = this.getServletContext().getRealPath("img").concat(File.separator).concat(fileName);
         fileItem.write(new File(filePath));
         return fileName;
     }
-
 
 }
