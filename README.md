@@ -11,7 +11,7 @@ Os laboratórios serão organizados por numeros e devem ser executado de forma s
 Os laboratórios disponíveis até o momento são: 
 
 ### Laboratório 1 — Criando uma Aplicação Web com Java
-- ~~LABORATÓRIO 1~~
+- [LABORATÓRIO 1](./LABORATORIO-1.md)
 
 Este laboratório apresenta os conceitos básicos para criar uma aplicação Web utilizando Java.
 
